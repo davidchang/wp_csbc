@@ -48,7 +48,7 @@
 	<div id="main" class="wrapper">
 
 		<div id="primary">
-			<div id="content" role="main">
+			<div id="content" role="main" class='index'>
 
 				<!-- TODO get pics, no text overlaying image -->
 				<!-- Four categories to go:
@@ -80,6 +80,7 @@
 						Sermons page
 						Fix permalinks for some pages
 						Connect Page (has a Calendar on it, info for each of our different groups)
+						Introduce "noFrontPage" category for filtering purposes
 
 					Content TODO
 						Content for About Us
@@ -98,28 +99,58 @@
 						Disqus for comments
 						Perhaps even some responsive design
 				-->
+
+				<section id='featured'>
+					<h1>Featured Content</h1>
+					<div class='clear'>
+
+						<!-- classes: sermon, event, blog -->
+
+						<?php
+						query_posts('posts_per_page=4');
+
+						$fakeCategories = ['sermon', 'event', 'blog', 'sermon'];
+						$i = 0;
+
+						while (have_posts()) : the_post(); ?>
+
+							<div class='featuredBox'>
+								<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
+									<div class='box <?php echo $fakeCategories[$i]; ?>'>
+										<?php echo $fakeCategories[$i]; $i++;?>
+									</div>
+								</a>
+								<h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+								</div>
+
+						<?php endwhile; ?>
+					</div>
+				</section>
 				
-				<section id='boxes' class='clear'>
-					<div id='resources' class='boxDiv'>
-						<a href='resources'>
-							<div class='box'></div>
-						</a>
-					</div>
-					<div id='events' class='boxDiv'>
-						<a href='events'>
-							<div class='box'></div>
-						</a>
-					</div>
-					<div id='location' class='boxDiv'>
-						<a href='location'>
-							<div class='box'></div>
-						</a>
-					</div>
-					<div id='contact' class='boxDiv'>
-						<a href='contact'>
-							<div class='box'></div>
-						</a>
-					</div>
+				<section>
+					<h1>Navigate</h1>
+					<div id='boxes' class='clear'>
+						<div id='resources' class='boxDiv'>
+							<a href='resources'>
+								<div class='box'></div>
+							</a>
+						</div>
+						<div id='events' class='boxDiv'>
+							<a href='events'>
+								<div class='box'></div>
+							</a>
+						</div>
+						<div id='location' class='boxDiv'>
+							<a href='location'>
+								<div class='box'></div>
+							</a>
+						</div>
+						<div id='contact' class='boxDiv'>
+							<a href='contact'>
+								<div class='box'></div>
+							</a>
+						</div>
+					</div>	
 				</section>
 
 			</div><!-- #content -->
