@@ -49,6 +49,23 @@
 
 		<div id="primary">
 			<div id="content" role="main">
+
+				<!-- About, Services, Resources, Connect -->
+				<!-- TODO get pics, no text overlaying image -->
+
+				<!-- pages that are actually being used:
+					Location
+					About Us (2)
+					Beliefs
+					Pastor Matt
+					Resources
+						Blog
+				-->
+
+				<!-- resources:
+					midweek encouragement (blog)
+					sermons
+				-->
 				
 				<section id='boxes' class='clear'>
 					<div id='resources' class='boxDiv'>

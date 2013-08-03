@@ -34,31 +34,15 @@
 
 <body <?php body_class(); ?>>
 <div id='mainContainer'>
-	<header class='clear'>
-		<div id='logo' class='left'><!--<div id='logoDiv'></div>-->
-			<img src='wp-content/themes/csbc-custom/img/csbc-logo.png' alt='CSBC logo'></img>
-		</div>
-		
-		<div id='englishMinistry' class='left'>
-			<div>English</div>
-			<div>Ministry</div>
-		</div>
-		<ul id='links' class='right'>
-			<li>
-				<a href='about'>About</a>
-			</li>
-			<li>
-				<a href='about'>Visit</a>
-			</li>
-			<li>
-				<a href='about'>Sermons</a>
-			</li>
-			<li>
-				<a href='about'>Connect</a>
-			</li>
-			<li>
-				<a href='about'>Events</a>
-			</li>
+	<header>
+		<h1>Chinese Southern Baptist Church</h1>
+		<h2>English Ministry</h2>
+		<ul>
+			<li><a href='/wordpress'>Home</a></li>
+			<li><a href='about'>About</a></li>
+			<li><a href='services'>Services</a></li>
+			<li><a href='resources'>Resources</a></li>
+			<li><a href='connect'>Connect</a></li>
 		</ul>
 	</header>
 
