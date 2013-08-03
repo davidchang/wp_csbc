@@ -43,6 +43,9 @@ get_header(); ?>
 		font-size: 1.3em;
 		line-height: 1.3em;	
 	}
+	.marginTop {
+		margin-top: 30px;
+	}
 </style>
 
 	<div id="primary" class="site-content">
@@ -64,10 +67,10 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<div class='largerText'><a href='sermons'>View More Midweek Sermons</a></div>
+				<div class='largerText'><a href='sermons'>View More Sermons</a></div>
 			</div>
 
-			<div>
+			<div class='marginTop'>
 				<h1>Midweek Encouragements</h1>
 
 				<?php

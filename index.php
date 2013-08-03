@@ -50,8 +50,10 @@
 		<div id="primary">
 			<div id="content" role="main">
 
-				<!-- About, Services, Resources, Connect -->
 				<!-- TODO get pics, no text overlaying image -->
+				<!-- Four categories to go:
+					About, Services, Resources, Connect
+				-->
 
 				<!-- pages that are actually being used:
 					Location
@@ -65,6 +67,36 @@
 				<!-- resources:
 					midweek encouragement (blog)
 					sermons
+				-->
+
+				<!--
+					Development TODO
+						Create new, different post types:
+							Events
+							Sermons
+							Midweek Encouragement
+							Other (Get To Know Us posts, for instance)
+						Front page (show 4 most recent posts, period.)
+						Sermons page
+						Fix permalinks for some pages
+						Connect Page (has a Calendar on it, info for each of our different groups)
+
+					Content TODO
+						Content for About Us
+						New Media
+							pics for the home page
+							pics for different resource types (Sermons, Midweek Encouragement, Events)
+							pics for Connect pages (guy's group, girl's group, prayer group)
+
+
+					What I don't want TODO
+						Archive page
+
+					Long term TODO
+						Hosting
+						Getting email addresses
+						Disqus for comments
+						Perhaps even some responsive design
 				-->
 				
 				<section id='boxes' class='clear'>

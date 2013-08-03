@@ -29,7 +29,7 @@ get_header(); ?>
 	<div id="primary" class="site-content">
 		<div id="content" role="main" class='aboutUsSection'>
 			<section>
-				<h1>Who are we?</h1>
+				<h1>Who we are:</h1>
 				<p>We are the English Speaking Ministry of Chinese Southern Baptist Church.</p>
 				<p>
 					TODO: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -37,7 +37,7 @@ get_header(); ?>
 			</section>
 
 			<section>
-				<h1>What do we believe?</h1>
+				<h1>Our beliefs:</h1>
 				<p>
 					 We believe that Jesus Christ is the way, the truth, and the life; further, we affirm that Jesus died on the cross for the sins of the world and only through believing and surrendering to Him can a person receive salvation. We strive to submit to the authority of the Bible in all our ministries. Our primary goal is to make disciples of Jesus Christ who are passionate for His glory. Our mission is to spread the gospel to all nations.
 				</p>
@@ -47,14 +47,14 @@ get_header(); ?>
 			</section>
 
 			<section>
-				<h1>Get to know us</h1>
+				<h1>Get to know us:</h1>
 				<p>
 					TODO: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 				</p>
 			</section>
 
 			<section>
-				<h1>How we got here</h1>
+				<h1>How we got here:</h1>
 				<p>Find out more about Pastor Matt <a href='/pastor-matt'>here</a></p>
 				<p>
 					TODO: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

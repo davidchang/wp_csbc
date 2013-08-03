@@ -37,12 +37,15 @@ get_header(); ?>
 	.locationSection td:last-child {
 		padding-left: 25px;
 	}
+	.marginTop {
+		margin-top: 15px;
+	}
 </style>
 
 	<div id="primary" class="site-content">
 		<div id="content" role="main" class='locationSection'>
 			<section>
-				<h1>When do we meet?</h1>
+				<h1>Our services:</h1>
 				<div>We meet throughout the week in different Bible studies (see more about connecting), but our main services consist of:</div>
 				<table>
 					<tbody>
@@ -61,9 +64,10 @@ get_header(); ?>
 					</tbody>
 				</table>
 				<div>Need a ride? We'd be more than happy to pick you up. Email us at rides@csbc.com</div>
+				<div class='marginTop'>To see a more detailed list of our events and how you can connect, click <a href='/connect'>here</a>.</div>
 			</section>
 			<section>
-				<h1>Where are we located?</h1>
+				<h1>Our location:</h1>
 
 				<div>925 S King St, Seattle, WA 98104 (<a href='https://maps.google.com/maps?ie=UTF8&amp;q=chinese+southern+baptist+church&amp;fb=1&amp;gl=us&amp;hq=chinese+southern+baptist+church&amp;hnear=0x54900cad2000ee23:0x5e0390eac5d804f2,Redmond,+WA&amp;cid=0,0,1748769979544881284&amp;ll=47.598255,-122.31982&amp;spn=0.006295,0.006295&amp;t=h&amp;iwloc=A&amp;source=embed'>Get Directions</a>)</div>
 
