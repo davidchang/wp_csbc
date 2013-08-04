@@ -1792,20 +1792,22 @@ header li a {
 	float: left;
 }
 #featured .featuredBox .box {
-	height: 177px;
+	height: 150px;
 	text-align: center;
-	line-height: 177px;
+	line-height: 150px;
 	font-size: 2em;
 	text-transform: uppercase;
+	background-size: 100%;
+	color: #EEE;
 }
 #featured .featuredBox .box.sermon {
-	background-color: #3498db;
+	background-image: url("img/sermon.png");
 }
 #featured .featuredBox .box.event {
 	background-color: #9b59b6;
 }
 #featured .featuredBox .box.blog {
-	background-color: #2ecc71;
+	background-image: url("img/blog.png");
 }
 #featured .featuredBox a {
 	color: #444;
@@ -1836,14 +1838,25 @@ header li a {
 .boxDiv {
 	-webkit-flex: 1 auto;
 	min-width: 236px;
-	height: 177px;
+	height: 150px;
 	padding: 0px 9px;
 }
 .box {
 	width: 100%;
 	margin-bottom: 5px;
 	height: 100%;
-	opacity: 0.9;
+	background-size: 100%;
+	text-align: center;
+	line-height: 150px;
+	font-size: 2em;
+	text-transform: uppercase;
+}
+.boxDiv a {
+	color: #444;
+	text-decoration: none;
+}
+.boxDiv a.white {
+	color: #EEE;
 }
 
 .left { float: left; }

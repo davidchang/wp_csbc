@@ -130,24 +130,24 @@
 				<section>
 					<h1>Navigate</h1>
 					<div id='boxes' class='clear'>
-						<div id='resources' class='boxDiv'>
-							<a href='resources'>
-								<div class='box'></div>
-							</a>
-						</div>
 						<div id='events' class='boxDiv'>
-							<a href='events'>
-								<div class='box'></div>
+							<a href='events' class='white'>
+								<div class='box'>About</div>
 							</a>
 						</div>
 						<div id='location' class='boxDiv'>
 							<a href='location'>
-								<div class='box'></div>
+								<div class='box'>Services</div>
+							</a>
+						</div>
+						<div id='resources' class='boxDiv'>
+							<a href='resources'>
+								<div class='box'>Resources</div>
 							</a>
 						</div>
 						<div id='contact' class='boxDiv'>
-							<a href='contact'>
-								<div class='box'></div>
+							<a href='contact' class='white'>
+								<div class='box'>Connect</div>
 							</a>
 						</div>
 					</div>	
