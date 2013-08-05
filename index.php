@@ -71,22 +71,23 @@
 
 				<!--
 					Development TODO
-						Create new, different post types:
+						Create new Categories:
 							Events
-							Sermons
-							Midweek Encouragement
+							+ Sermons
+							+ Midweek Encouragement
 							Other (Get To Know Us posts, for instance)
-						Front page (show 4 most recent posts, period.)
+						Front page (show 4 most recent posts, period, maybe exclude a specific "no-feature" category)
 						Sermons page
-						Fix permalinks for some pages
+						Fix permalinks for some pages (remember where post_name like 'blog%')
 						Connect Page (has a Calendar on it, info for each of our different groups)
-						Introduce "noFrontPage" category for filtering purposes
+						Sidebar on blog posts
+
 
 					Content TODO
 						Content for About Us
 						New Media
-							pics for the home page
-							pics for different resource types (Sermons, Midweek Encouragement, Events)
+							+ pics for the home page
+							+ pics for different resource types (Sermons, Midweek Encouragement, Events)
 							pics for Connect pages (guy's group, girl's group, prayer group)
 
 
@@ -109,7 +110,7 @@
 						<?php
 						query_posts('posts_per_page=4');
 
-						$fakeCategories = ['sermon', 'event', 'blog', 'sermon'];
+						$fakeCategories = array('sermon', 'event', 'blog', 'sermon');
 						$i = 0;
 
 						while (have_posts()) : the_post(); ?>
@@ -131,12 +132,12 @@
 					<h1>Navigate</h1>
 					<div id='boxes' class='clear'>
 						<div id='events' class='boxDiv'>
-							<a href='events' class='white'>
+							<a href='about-us' class='white'>
 								<div class='box'>About</div>
 							</a>
 						</div>
 						<div id='location' class='boxDiv'>
-							<a href='location'>
+							<a href='services'>
 								<div class='box'>Services</div>
 							</a>
 						</div>

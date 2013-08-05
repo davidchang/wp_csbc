@@ -1746,19 +1746,21 @@ header {
 	padding-top: 20px;
 	padding-bottom: 20px;
 	border-bottom: 1px solid #CCC;
-	text-transform: uppercase;
 }
 header h1 {
 	font-size: 3.5em;
+	text-transform: uppercase;
 }
 header h2 {
 	font-size: 3em;
+	text-transform: uppercase;
 }
 header ul {
 	list-style-type: none;
 	font-size: 1.3em;
 	clear: both;
 	margin-bottom: 15px;
+	text-transform: uppercase;
 }
 header li {
 	float: left;

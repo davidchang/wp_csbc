@@ -38,11 +38,12 @@
 		<h1>Chinese Southern Baptist Church</h1>
 		<h2>English Ministry</h2>
 		<ul>
-			<li><a href='/wordpress'>Home</a></li>
-			<li><a href='about'>About</a></li>
-			<li><a href='services'>Services</a></li>
-			<li><a href='resources'>Resources</a></li>
-			<li><a href='connect'>Connect</a></li>
+			<?php $siteurl = get_option("siteurl"); ?>
+			<li><a href='<?php echo $siteurl; ?>'>Home</a></li>
+			<li><a href='<?php echo $siteurl; ?>/about-us'>About</a></li>
+			<li><a href='<?php echo $siteurl; ?>/services'>Services</a></li>
+			<li><a href='<?php echo $siteurl; ?>/resources'>Resources</a></li>
+			<li><a href='<?php echo $siteurl; ?>/connect'>Connect</a></li>
 		</ul>
 	</header>
 

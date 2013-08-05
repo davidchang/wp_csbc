@@ -50,7 +50,7 @@ get_header(); ?>
 				<?php
 				$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
-				query_posts('posts_per_page=5&paged=' . $paged); 
+				query_posts('cat=8&posts_per_page=5&paged=' . $paged); 
 
 				if ( have_posts() ) : while (have_posts()) : the_post(); ?>
 

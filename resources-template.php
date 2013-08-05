@@ -46,16 +46,40 @@ get_header(); ?>
 	.marginTop {
 		margin-top: 30px;
 	}
+	.half {
+		width: 50%;
+		float: left;
+	}
+	.postBody {
+		padding-right: 35px;
+	}
 </style>
 
 	<div id="primary" class="site-content">
-		<div id="content" role="main" class='resourcesSection'>
+		<div id="content" role="main" class='resourcesSection clear'>
+
+			<?php
+
+				function getPosts($type) {
+					if($type == 'midweek')
+						$cat = 8;
+					else if($type == 'mini message')
+						$cat = 7;
+					else if($type == 'sermon')
+						$cat = 11;
+
+					if(!$cat)
+						query_posts('posts_per_page=5');	
+					else
+						query_posts("cat=$cat&posts_per_page=5");
+				}
+			?>
 
 			<div>
 				<h1>Sermons</h1>
 
 				<?php
-				query_posts('posts_per_page=5');
+				getPosts('sermon');
 
 				while (have_posts()) : the_post(); ?>
 
@@ -70,24 +94,53 @@ get_header(); ?>
 				<div class='largerText'><a href='sermons'>View More Sermons</a></div>
 			</div>
 
-			<div class='marginTop'>
+			<div class='marginTop half'>
 				<h1>Midweek Encouragements</h1>
 
-				<?php
+				<div class='postBody'>
 
-				query_posts('posts_per_page=5'); 
+					<?php
 
-				while (have_posts()) : the_post(); ?>
+					getPosts('midweek');
 
-					<section>
-					  <h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-					  <div class='date'><?php the_date(); ?></div>
-					  <?php the_excerpt(); ?>
-					</section>
+					while (have_posts()) : the_post(); ?>
 
-				<?php endwhile; ?>
+						<section>
+						  <h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+						  <div class='date'><?php the_date(); ?></div>
+						  <?php the_excerpt(); ?>
+						</section>
 
-				<div class='largerText'><a href='blog-2'>View More Midweek Encouragements</a></div>
+					<?php endwhile; ?>
+
+					<div class='largerText'><a href='blog-2'>View More Midweek Encouragements</a></div>
+
+				</div>
+
+			</div>
+
+			<div class='marginTop half'>
+				<h1>Sunday Mini Messages</h1>
+
+				<div class='postBody'>
+
+					<?php
+
+					getPosts('mini message');
+
+					while (have_posts()) : the_post(); ?>
+
+						<section>
+						  <h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+						  <div class='date'><?php the_date(); ?></div>
+						  <?php the_excerpt(); ?>
+						</section>
+
+					<?php endwhile; ?>
+
+					<div class='largerText'><a href='blog-2'>View More Sunday Mini Messages</a></div>
+
+				</div>
 
 			</div>
 

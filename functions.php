@@ -450,6 +450,11 @@ function twentytwelve_customize_preview_js() {
 add_action( 'customize_preview_init', 'twentytwelve_customize_preview_js' );
 
 function new_excerpt_more( $more ) {
-	return '... <a class="read-more" href="'. get_permalink( get_the_ID() ) . '">Read More</a>';
+	return '.. (<a class="read-more" href="'. get_permalink( get_the_ID() ) . '">Read More</a>)';
 }
 add_filter( 'excerpt_more', 'new_excerpt_more' );
+
+function custom_excerpt_length( $length ) {
+	return 25;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
