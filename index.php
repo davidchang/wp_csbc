@@ -57,7 +57,7 @@
 
 				<!-- pages that are actually being used:
 					Location
-					About Us (2)
+					About Us
 					Beliefs
 					Pastor Matt
 					Resources
@@ -72,15 +72,18 @@
 				<!--
 					Development TODO
 						Create new Categories:
-							Events
-							+ Sermons
-							+ Midweek Encouragement
+							+ Events (2)
+							+ Sermons (11)
+							+ Midweek Enccuragement (8)
+							+ Message from the Pastor (7)
 							Other (Get To Know Us posts, for instance)
-						Front page (show 4 most recent posts, period, maybe exclude a specific "no-feature" category)
-						Sermons page
-						Fix permalinks for some pages (remember where post_name like 'blog%')
+						+ Front page (show 4 most recent posts, period, maybe exclude a specific "no-feature" category)
+						Sermons page (special format on category.php required)
+						+ Style the categories page
+						- Fix permalinks for some pages (remember where post_name like 'blog%')
 						Connect Page (has a Calendar on it, info for each of our different groups)
-						Sidebar on blog posts
+						+ Sidebar on blog posts
+						+ Fix permalinks on Resources page to their respective Categories pages, not separate blog type pages
 
 
 					Content TODO
@@ -90,15 +93,18 @@
 							+ pics for different resource types (Sermons, Midweek Encouragement, Events)
 							pics for Connect pages (guy's group, girl's group, prayer group)
 
-
-					What I don't want TODO
-						Archive page
-
 					Long term TODO
-						Hosting
-						Getting email addresses
+						+ Hosting
+						+ Getting email addresses
 						Disqus for comments
 						Perhaps even some responsive design
+
+						+ Google Analytics
+
+						Talk to Chris about SEO
+						Figure out how to optimize images for the web :/
+
+						Alternative front page layouts (maybe something with a carousel)
 				-->
 
 				<section id='featured'>
@@ -108,7 +114,8 @@
 						<!-- classes: sermon, event, blog -->
 
 						<?php
-						query_posts('posts_per_page=4');
+						$dontFeatureCat = 19;
+						query_posts("posts_per_page=4&cat=-$dontFeatureCat");
 
 						$fakeCategories = array('sermon', 'event', 'blog', 'sermon');
 						$i = 0;

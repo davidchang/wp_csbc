@@ -59,7 +59,7 @@ get_header(); ?>
 		<div id="content" role="main" class='resourcesSection clear'>
 
 			<?php
-
+				$siteurl = get_option("siteurl");
 				function getPosts($type) {
 					if($type == 'midweek')
 						$cat = 8;
@@ -91,7 +91,7 @@ get_header(); ?>
 
 				<?php endwhile; ?>
 
-				<div class='largerText'><a href='sermons'>View More Sermons</a></div>
+				<div class='largerText'><a href='<?php echo $siteurl; ?>/category/from-the-pastor/sermons/'>View More Sermons</a></div>
 			</div>
 
 			<div class='marginTop half'>
@@ -113,7 +113,7 @@ get_header(); ?>
 
 					<?php endwhile; ?>
 
-					<div class='largerText'><a href='blog-2'>View More Midweek Encouragements</a></div>
+					<div class='largerText'><a href='<?php echo $siteurl; ?>/category/from-the-pastor/midweek/'>View More Midweek Encouragements</a></div>
 
 				</div>
 
@@ -138,7 +138,7 @@ get_header(); ?>
 
 					<?php endwhile; ?>
 
-					<div class='largerText'><a href='blog-2'>View More Sunday Mini Messages</a></div>
+					<div class='largerText'><a href='<?php echo $siteurl; ?>/category/from-the-pastor/message-from-the-pastor/'>View More Sunday Mini Messages</a></div>
 
 				</div>
 
