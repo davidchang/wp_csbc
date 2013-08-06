@@ -76,14 +76,15 @@
 							+ Sermons (11)
 							+ Midweek Enccuragement (8)
 							+ Message from the Pastor (7)
-							Other (Get To Know Us posts, for instance)
+							? Other (Get To Know Us posts, for instance)
 						+ Front page (show 4 most recent posts, period, maybe exclude a specific "no-feature" category)
-						Sermons page (special format on category.php required)
 						+ Style the categories page
 						- Fix permalinks for some pages (remember where post_name like 'blog%')
-						Connect Page (has a Calendar on it, info for each of our different groups)
 						+ Sidebar on blog posts
 						+ Fix permalinks on Resources page to their respective Categories pages, not separate blog type pages
+						
+						Connect Page (has a Calendar on it, info for each of our different groups)
+						Sermons page (special format on category.php required)
 
 
 					Content TODO
@@ -114,24 +115,50 @@
 						<!-- classes: sermon, event, blog -->
 
 						<?php
-						$dontFeatureCat = 19;
-						query_posts("posts_per_page=4&cat=-$dontFeatureCat");
+							$dontFeatureCat = 19;
+							query_posts("posts_per_page=4&cat=-$dontFeatureCat");
 
-						$fakeCategories = array('sermon', 'event', 'blog', 'sermon');
-						$i = 0;
+							$categoryMapping = array(
+								11 => 'sermon',
+								2 => 'event',
+								8 => 'blog', //midweek encouragement
+								7 => 'blog' //message from the pastor
+							);
 
-						while (have_posts()) : the_post(); ?>
+							$useFakeCategories = false;
+							$fakeCategories = array('sermon', 'event', 'blog', 'sermon');
+							$i = 0;
+
+							while (have_posts()) : the_post();
+
+							$categories = get_the_category();
+
+							foreach($categories as $category) {
+								$trueCategory = $categoryMapping[$category->cat_ID];
+								if($trueCategory)
+									break;
+							}
+						?>
 
 							<div class='featuredBox'>
 								<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
-									<div class='box <?php echo $fakeCategories[$i]; ?>'>
-										<?php echo $fakeCategories[$i]; $i++;?>
+									<?php
+										$category = '';
+										if($useFakeCategories) {
+											$category = $fakeCategories[$i]; $i++;
+										}
+										else {
+											$category = $trueCategory;	
+										}
+									?>
+									<div class='box <?php echo $category; ?>'>
+										<?php echo $category; ?>
 									</div>
 								</a>
 								<h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-								</div>
+							</div>
 
-						<?php endwhile; ?>
+							<?php endwhile; ?>
 					</div>
 				</section>
 				
