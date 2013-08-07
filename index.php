@@ -108,83 +108,31 @@
 						Alternative front page layouts (maybe something with a carousel)
 				-->
 
-				<section id='featured'>
-					<h1>Featured Content</h1>
-					<div class='clear'>
+				<?php $siteurl = get_option("siteurl"); ?>
 
-						<?php
-							/* classes: sermon, event, blog */
-							$dontFeatureCat = 19;
-							query_posts("posts_per_page=4&cat=-$dontFeatureCat");
-
-							$categoryMapping = array(
-								11 => 'sermon',
-								2 => 'event',
-								8 => 'blog', //midweek encouragement
-								7 => 'blog' //message from the pastor
-							);
-
-							$useFakeCategories = false;
-							$fakeCategories = array('sermon', 'event', 'blog', 'sermon');
-							$i = 0;
-
-							while (have_posts()) : the_post();
-
-							$categories = get_the_category();
-
-							foreach($categories as $category) {
-								$trueCategory = $categoryMapping[$category->cat_ID];
-								if($trueCategory)
-									break;
-							}
-						?>
-
-							<div class='featuredBox'>
-								<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
-									<?php
-										$category = '';
-										if($useFakeCategories) {
-											$category = $fakeCategories[$i]; $i++;
-										}
-										else {
-											$category = $trueCategory;	
-										}
-									?>
-									<div class='box <?php echo $category; ?>'>
-										<?php echo $category; ?>
-									</div>
-								</a>
-								<h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-							</div>
-
-							<?php endwhile; ?>
-					</div>
-				</section>
 				
-				<section>
-					<h1>Navigate</h1>
-					<div id='boxes' class='clear'>
-						<div id='events' class='boxDiv'>
-							<a href='about-us' class='white'>
-								<div class='box'>About</div>
-							</a>
-						</div>
-						<div id='location' class='boxDiv'>
-							<a href='services'>
-								<div class='box'>Services</div>
-							</a>
-						</div>
-						<div id='resources' class='boxDiv'>
-							<a href='resources'>
-								<div class='box'>Resources</div>
-							</a>
-						</div>
-						<div id='contact' class='boxDiv'>
-							<a href='contact' class='white'>
-								<div class='box'>Connect</div>
-							</a>
-						</div>
-					</div>	
+				<section id='about'>
+					<h2 class='notClickable'>About.</h2>
+					<h2 class='clickable'><a href='<?php echo $siteurl; ?>/about-us'>About.</a></h2>
+					<div class='bg'></div>
+				</section>
+
+				<section id='services'>
+					<h2 class='notClickable'>Services.</h2>
+					<h2 class='clickable'><a href='<?php echo $siteurl; ?>/services'>Services.</a></h2>
+					<div class='bg'></div>
+				</section>
+
+				<section id='connect'>
+					<h2 class='notClickable'>Connect.</h2>
+					<h2 class='clickable'><a href='<?php echo $siteurl; ?>/connect'>Connect.</a></h2>
+					<div class='bg'></div>
+				</section>
+
+				<section id='resources'>
+					<h2 class='notClickable'>Resources.</h2>
+					<h2 class='clickable'><a href='<?php echo $siteurl; ?>/resources'>Resources.</a></h2>
+					<div class='bg'></div>
 				</section>
 
 			</div><!-- #content -->

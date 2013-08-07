@@ -1769,97 +1769,6 @@ header li {
 header li a {
 	text-decoration: none;
 }
-.index h1 {
-	font-size: 2.5em;
-	margin-bottom: 15px;
-}
-#featured {
-	border-bottom: 1px solid #CCC;
-	margin-bottom: 20px;
-}
-#featured h2 {
-	font-size: 1.5em;
-	text-align: center;
-	line-height: 1.5em;
-}
-#featured .featuredBox:first-child {
-	padding-left: 0px;
-}
-#featured .featuredBox:last-child {
-	padding-right: 0px;
-}
-#featured .featuredBox {
-	width: 239px;
-	padding: 0px 9px 30px;
-	float: left;
-}
-#featured .featuredBox .box {
-	height: 150px;
-	text-align: center;
-	line-height: 150px;
-	font-size: 2em;
-	text-transform: uppercase;
-	background-size: 100%;
-	color: #EEE;
-}
-#featured .featuredBox .box.sermon {
-	background-image: url("img/sermon.png");
-}
-#featured .featuredBox .box.event {
-	background-image: url("img/events2.png");
-}
-#featured .featuredBox .box.blog {
-	background-image: url("img/blog.png");
-}
-#featured .featuredBox a {
-	color: #444;
-	text-decoration: none;
-}
-#boxes {
-	text-transform: uppercase;
-	font-size: 1.2em;
-	margin-bottom: 60px;
-
-	width: 100%;
-
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-
-	/*-webkit-flex-flow: row wrap;*/
-	justify-content: center;
-}
-#boxes .boxDiv:first-child {
-	padding-left: 0px;
-}
-#boxes .boxDiv:last-child {
-	padding-right: 0px;
-}
-.boxDiv {
-	-webkit-flex: 1 auto;
-	min-width: 236px;
-	height: 150px;
-	padding: 0px 9px;
-}
-.box {
-	width: 100%;
-	margin-bottom: 5px;
-	height: 100%;
-	background-size: 100%;
-	text-align: center;
-	line-height: 150px;
-	font-size: 2em;
-	text-transform: uppercase;
-}
-.boxDiv a {
-	color: #444;
-	text-decoration: none;
-}
-.boxDiv a.white {
-	color: #EEE;
-}
 
 .left { float: left; }
 .right { float: right; }
@@ -1867,19 +1776,6 @@ header li a {
 	clear: both;
 }
 .cap { text-transform: uppercase; }
-
-#boxes #resources  .box {
-	background-image: url("img/resources.png");
-}
-#boxes #events  .box {
-	background-image: url("img/events.png");
-}
-#boxes #location  .box {
-	background-image: url("img/location.png");
-}
-#boxes #contact  .box {
-	background-image: url("img/contact.png");
-}
 
 .entry-content {
 	position: relative;
@@ -1915,4 +1811,50 @@ header li a {
 }
 #content {
 	padding-bottom: 20px;
+}
+
+/* INDEX */
+
+.index section {
+	min-height: 100px;
+	position: relative;
+	border: 1px solid #CCC;
+	margin-bottom: 20px;
+}
+.index section h2 {
+	position: absolute;
+	left: 15px;
+	bottom: 0px;
+	text-transform: uppercase;
+	font-size: 3em;
+}
+.index section h2 a {
+	text-decoration: none;
+	color: #444;
+}
+.index h2.clickable {
+	display: none;
+	z-index: 2;
+}
+.index section:hover h2.clickable {
+	display: block;
+}
+.index section:hover h2.notClickable {
+	display: none;
+}
+.index section .bg {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: url('img/blog.png');
+	opacity: 0.3;
+}
+.index section:hover .bg {
+	opacity: 0.5;
+}
+.index section#services .bg {
+	background-image: url('img/location.png');
+}
+.index section#resources .bg {
+	background-image: url('img/resources.png');
 }
