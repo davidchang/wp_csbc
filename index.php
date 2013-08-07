@@ -112,9 +112,8 @@
 					<h1>Featured Content</h1>
 					<div class='clear'>
 
-						<!-- classes: sermon, event, blog -->
-
 						<?php
+							/* classes: sermon, event, blog */
 							$dontFeatureCat = 19;
 							query_posts("posts_per_page=4&cat=-$dontFeatureCat");
 
