@@ -1815,46 +1815,82 @@ header li a {
 
 /* INDEX */
 
-.index section {
+.index > section {
 	min-height: 100px;
 	position: relative;
 	border: 1px solid #CCC;
 	margin-bottom: 20px;
 }
-.index section h2 {
+.index > section h2 {
 	position: absolute;
 	left: 15px;
 	bottom: 0px;
 	text-transform: uppercase;
 	font-size: 3em;
+	z-index: 2;
 }
-.index section h2 a {
+.index > section h2 a {
 	text-decoration: none;
 	color: #444;
 }
-.index h2.clickable {
-	display: none;
-	z-index: 2;
+.index > section:hover .bg {
+	z-index: 1;
 }
-.index section:hover h2.clickable {
-	display: block;
-}
-.index section:hover h2.notClickable {
-	display: none;
-}
-.index section .bg {
+.index > section .bg {
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	background-image: url('img/blog.png');
 	opacity: 0.3;
+	z-index: 3;
 }
-.index section:hover .bg {
+.index > section:hover .bg {
 	opacity: 0.5;
 }
-.index section#services .bg {
+.index > section#services .bg {
 	background-image: url('img/location.png');
 }
-.index section#resources .bg {
+.index > section#resources .bg {
 	background-image: url('img/resources.png');
 }
+.content {
+	position: absolute;
+	top: 5px;
+	right: 20px;
+	font-size: 1.5em;
+	letter-height: 1.5em;
+	z-index: 2;
+}
+section .content {
+	padding: 5px;
+	opacity: 0.5;
+	width: 50%;
+	text-align: right;
+}
+section:hover .content {
+	opacity: 1.0;
+}
+.formatted table {
+	float: right;
+}
+.formatted td {
+	padding-bottom: 8px;
+}
+.formatted td:last-child {
+	padding-left: 25px;
+	text-align: right;
+}
+/*
+#resources {
+	height: 150px;
+}
+#resources .content {
+	width: 70%;
+}
+#resources .content section {
+	width: 200px;
+	height: 200px;
+	border: 1px solid #CCC;
+	float: right;
+}
+*/

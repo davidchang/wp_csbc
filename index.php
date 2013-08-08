@@ -112,15 +112,35 @@
 
 				
 				<section id='about'>
-					<h2 class='notClickable'>About.</h2>
-					<h2 class='clickable'><a href='<?php echo $siteurl; ?>/about-us'>About.</a></h2>
+					<h2><a href='<?php echo $siteurl; ?>/about-us'>About.</a></h2>
 					<div class='bg'></div>
+					<div class='content'>
+						<div>We are an Asian American church located</div>
+						<div>in Seattle's International District.</div>
+					</div>
 				</section>
 
 				<section id='services'>
-					<h2 class='notClickable'>Services.</h2>
 					<h2 class='clickable'><a href='<?php echo $siteurl; ?>/services'>Services.</a></h2>
 					<div class='bg'></div>
+					<div class='content formatted'>
+						<table>
+							<tbody>
+								<tr>
+									<td>Sunday Bible Study:</td>
+									<td>10:00am</td>
+								</tr>
+								<tr>
+									<td>Sunday Worship Service:</td>
+									<td>11:15am</td>
+								</tr>
+								<tr>
+									<td>Friday Worship/Training:</td>
+									<td>7:00pm</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</section>
 
 				<section id='connect'>
@@ -129,10 +149,23 @@
 					<div class='bg'></div>
 				</section>
 
+				<?php query_posts("cat=7,8,11&posts_per_page=2"); ?>
+
 				<section id='resources'>
 					<h2 class='notClickable'>Resources.</h2>
 					<h2 class='clickable'><a href='<?php echo $siteurl; ?>/resources'>Resources.</a></h2>
 					<div class='bg'></div>
+					<!--
+					<div class='content'>
+						<?php while (have_posts()) : the_post(); ?>
+							<section>
+							  <h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+							  <div class='date'><?php the_date(); ?></div>
+							  <?php the_excerpt(); ?>
+							</section>
+						<?php endwhile; ?>
+					</div>
+					-->
 				</section>
 
 			</div><!-- #content -->
