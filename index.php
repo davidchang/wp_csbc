@@ -121,7 +121,7 @@
 				</section>
 
 				<section id='services'>
-					<h2 class='clickable'><a href='<?php echo $siteurl; ?>/services'>Services.</a></h2>
+					<h2><a href='<?php echo $siteurl; ?>/services'>Services.</a></h2>
 					<div class='bg'></div>
 					<div class='content formatted'>
 						<table>
@@ -144,28 +144,26 @@
 				</section>
 
 				<section id='connect'>
-					<h2 class='notClickable'>Connect.</h2>
-					<h2 class='clickable'><a href='<?php echo $siteurl; ?>/connect'>Connect.</a></h2>
+					<h2><a href='<?php echo $siteurl; ?>/connect'>Connect.</a></h2>
 					<div class='bg'></div>
 				</section>
 
-				<?php query_posts("cat=7,8,11&posts_per_page=2"); ?>
+				<?php query_posts("cat=7,8,11&posts_per_page=3"); ?>
 
 				<section id='resources'>
-					<h2 class='notClickable'>Resources.</h2>
-					<h2 class='clickable'><a href='<?php echo $siteurl; ?>/resources'>Resources.</a></h2>
+					<h2><a href='<?php echo $siteurl; ?>/resources'>Resources.</a></h2>
 					<div class='bg'></div>
-					<!--
 					<div class='content'>
 						<?php while (have_posts()) : the_post(); ?>
-							<section>
-							  <h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
-							  <div class='date'><?php the_date(); ?></div>
-							  <?php the_excerpt(); ?>
-							</section>
+							<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
+								<!-- TOOD: vertical align this -->
+								<section>
+								  	<div class='contentHeader'>Last Midweek Encouragement:</div>
+								  	<div class='contentTitle'><?php the_title(); ?></div>
+								</section>
+							</a>
 						<?php endwhile; ?>
 					</div>
-					-->
 				</section>
 
 			</div><!-- #content -->

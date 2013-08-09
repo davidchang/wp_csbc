@@ -1821,7 +1821,7 @@ header li a {
 	border: 1px solid #CCC;
 	margin-bottom: 20px;
 }
-.index > section h2 {
+.index > section > h2 {
 	position: absolute;
 	left: 15px;
 	bottom: 0px;
@@ -1829,7 +1829,7 @@ header li a {
 	font-size: 3em;
 	z-index: 2;
 }
-.index > section h2 a {
+.index > section > h2 a {
 	text-decoration: none;
 	color: #444;
 }
@@ -1880,17 +1880,32 @@ section:hover .content {
 	padding-left: 25px;
 	text-align: right;
 }
-/*
 #resources {
-	height: 150px;
+	height: 143px;
 }
 #resources .content {
 	width: 70%;
 }
-#resources .content section {
-	width: 200px;
-	height: 200px;
-	border: 1px solid #CCC;
+#resources .content a {
+	margin-right: 20px;
+	text-decoration: none;
+	color: #333;
 	float: right;
+	width: 200px;
+	height: 120px;
 }
-*/
+#resources .content a:first-child {
+	margin-right: 0px;
+}	
+#resources .content section {
+	width: 100%;
+	height: 100%;
+	border: 1px solid #666;
+	text-align: center;
+}
+.contentHeader {
+	font-size: 0.65em;
+}
+.contentTitle {
+	font-weight: bold;
+}
