@@ -79,7 +79,18 @@ get_header(); ?>
 				<section>
 				  <h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 				  <div class='date'><?php the_date(); ?></div>
-				  <?php the_content(); ?>
+
+				  <?php $custom_fields = get_post_custom(); if(!$custom_fields['youtube']) { ?>
+
+					<?php the_content(); ?>
+
+				  <?php } else { ?>
+
+  					<div class='youtubeWrapper'>
+						<iframe width="560" height="315" src="//www.youtube.com/embed/<?php echo $custom_fields['youtube'][0]; ?>" frameborder="0" allowfullscreen></iframe>
+					</div>
+				  <?php } ?>
+
 				</section>
 			<?php
 			endwhile;

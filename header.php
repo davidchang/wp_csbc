@@ -43,8 +43,8 @@
 				<li><a href='<?php echo $siteurl; ?>'>Home</a></li>
 				<li><a href='<?php echo $siteurl; ?>/about-us'>About</a></li>
 				<li><a href='<?php echo $siteurl; ?>/services'>Services</a></li>
-				<li><a href='<?php echo $siteurl; ?>/resources'>Resources</a></li>
 				<li><a href='<?php echo $siteurl; ?>/connect'>Connect</a></li>
+				<li><a href='<?php echo $siteurl; ?>/resources'>Resources</a></li>
 			</ul>
 		</div>
 	</header>
