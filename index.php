@@ -115,8 +115,9 @@
 					<h2><a href='<?php echo $siteurl; ?>/about-us'>About.</a></h2>
 					<div class='bg'></div>
 					<div class='content'>
-						<div>We are an Asian American church located</div>
+						<div>We are an Asian American, Southern Baptist church located</div>
 						<div>in Seattle's International District.</div>
+						<div>We believe Jesus came to save sinners</div>
 					</div>
 				</section>
 
@@ -126,6 +127,9 @@
 					<div class='content formatted'>
 						<table>
 							<tbody>
+								<tr>
+									<td id='addressTd' colspan='2'>925 S King St, Seattle, WA 98104</td>
+								</tr>
 								<tr>
 									<td>Sunday Bible Study:</td>
 									<td>10:00am</td>

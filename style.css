@@ -1820,10 +1820,11 @@ header li a {
 	position: relative;
 	border: 1px solid #CCC;
 	margin-bottom: 20px;
+	height: 143px;
 }
 .index > section > h2 {
 	position: absolute;
-	left: 15px;
+	left: 5px;
 	bottom: 0px;
 	text-transform: uppercase;
 	font-size: 3em;
@@ -1840,18 +1841,27 @@ header li a {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	background-image: url('img/blog.png');
+	background-color: #666;
+	background-size: 100%;
+	background-position-y: -30px;
 	opacity: 0.3;
 	z-index: 3;
 }
 .index > section:hover .bg {
 	opacity: 0.5;
 }
+.index > section#about .bg {
+	background-image: url('img2/aboutShrunk.jpg');
+	background-position-y: -50px;
+}
 .index > section#services .bg {
-	background-image: url('img/location.png');
+	background-image: url('img2/servicesShrunk.png');
+}
+.index > section#connect .bg {
+	background-image: url('img2/connectShrunk.jpg');
 }
 .index > section#resources .bg {
-	background-image: url('img/resources.png');
+	background-image: url('img2/resourcesShrunk.jpg');
 }
 .content {
 	position: absolute;
@@ -1863,7 +1873,7 @@ header li a {
 }
 section .content {
 	padding: 5px;
-	opacity: 0.5;
+	opacity: 0.2;
 	width: 50%;
 	text-align: right;
 }
@@ -1880,7 +1890,7 @@ section:hover .content {
 	padding-left: 25px;
 	text-align: right;
 }
-#resources {
+#resources, #connect {
 	height: 143px;
 }
 #resources .content {
@@ -1893,7 +1903,7 @@ section:hover .content {
 	float: right;
 	width: 200px;
 	height: 120px;
-	border: 1px solid #666;
+	/*border: 1px solid #666;*/
 	position: relative;
 }
 #resources .content a:first-child {
@@ -1912,4 +1922,9 @@ section:hover .content {
 }
 .contentTitle {
 	font-weight: bold;
+}
+#addressTd {
+	padding-left: 0px;
+	font-weight: bold;
+	padding-bottom: 20px;
 }
