@@ -13,39 +13,7 @@
  * @subpackage Twenty_Twelve
  * @since Twenty Twelve 1.0
  */
-?>
-<!DOCTYPE html>
-<!--[if IE 7]>
-<html class="ie ie7" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if IE 8]>
-<html class="ie ie8" <?php language_attributes(); ?>>
-<![endif]-->
-<!--[if !(IE 7) | !(IE 8)  ]><!-->
-<html <?php language_attributes(); ?>>
-<!--<![endif]-->
-<head>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-<meta name="viewport" content="width=device-width" />
-<title><?php wp_title( '|', true, 'right' ); ?></title>
-<link rel="profile" href="http://gmpg.org/xfn/11" />
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
-<!--[if lt IE 9]>
-<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
-<![endif]-->
-<link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
-<?php wp_head(); ?>
-</head>
-
-<body <?php body_class(); ?>>
-<div id='mainContainer'>
-	<header>
-		<h1>Chinese Southern Baptist Church</h1>
-		<h2>English Ministry</h2>
-	</header>
-
-	<div id="main" class="wrapper">
+get_header(); ?>
 
 		<div id="primary">
 			<div id="content" role="main" class='index'>
@@ -115,9 +83,10 @@
 					<h2><a href='<?php echo $siteurl; ?>/about-us'>About.</a></h2>
 					<div class='bg'></div>
 					<div class='content'>
-						<div>We are an Asian American, Southern Baptist church located</div>
-						<div>in Seattle's International District.</div>
-						<div>We believe Jesus came to save sinners</div>
+						<div class='marginTopForty'>We are an Asian American, Southern Baptist church</div>
+						<div class='marginBottom'>located in Seattle's International District.</div>
+						<!--<div>We are not ashamed Jesus' life and resurrection and</div>
+						<div>we believe that it is <i>truly</i> good news for all people.</div>-->
 					</div>
 				</section>
 
@@ -150,19 +119,56 @@
 				<section id='connect'>
 					<h2><a href='<?php echo $siteurl; ?>/connect'>Connect.</a></h2>
 					<div class='bg'></div>
+					<!--
+					<div class='content'>
+						<iframe src="https://www.google.com/calendar/embed?mode=AGENDA&amp;height=120&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=krucial206%40gmail.com&amp;color=%23182C57&amp;ctz=America%2FLos_Angeles" style=" border-width:0 " width="940" height="120" frameborder="0" scrolling="no"></iframe>
+					</div>
+					-->
 				</section>
 
-				<?php query_posts("cat=7,8,11&posts_per_page=3"); ?>
+				<?php
+					function getPosts($type,$number=5) {
+						$dontFeatureCat = 19;
+						query_posts("posts_per_page=4&cat=-$dontFeatureCat");
+
+						if($type == 'midweek')
+							$cat = 8;
+						else if($type == 'mini message')
+							$cat = 7;
+						else if($type == 'sermon')
+							$cat = 11;
+
+						if(!$cat)
+							query_posts("cat=$dontFeatureCat&posts_per_page=$number");	
+						else
+							query_posts("cat=$cat,$dontFeatureCat&posts_per_page=$number");
+					}
+				?>
 
 				<section id='resources'>
 					<h2><a href='<?php echo $siteurl; ?>/resources'>Resources.</a></h2>
 					<div class='bg'></div>
 					<div class='content'>
-						<?php while (have_posts()) : the_post(); ?>
+						<?php getPosts('midweek', 1); while (have_posts()) : the_post(); ?>
 							<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
-								<!-- TOOD: vertical align this -->
-								<section>
-								  	<div class='contentHeader'>Last Midweek Encouragement:</div>
+								<section class='midweek'>
+								  	<div class='contentHeader'>Latest Midweek Encouragement:</div>
+								  	<div class='contentTitle'><?php the_title(); ?></div>
+								</section>
+							</a>
+						<?php endwhile; ?>
+						<?php getPosts('mini message', 1); while (have_posts()) : the_post(); ?>
+							<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
+								<section class='miniMessage'>
+								  	<div class='contentHeader'>Latest Message from the Pastor:</div>
+								  	<div class='contentTitle'><?php the_title(); ?></div>
+								</section>
+							</a>
+						<?php endwhile; ?>
+						<?php getPosts('sermon', 1); while (have_posts()) : the_post(); ?>
+							<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
+								<section class='sermon'>
+								  	<div class='contentHeader'>Latest Sermon:</div>
 								  	<div class='contentTitle'><?php the_title(); ?></div>
 								</section>
 							</a>

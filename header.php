@@ -36,15 +36,17 @@
 <div id='mainContainer'>
 	<header>
 		<h1>Chinese Southern Baptist Church</h1>
-		<h2>English Ministry</h2>
-		<ul>
-			<?php $siteurl = get_option("siteurl"); ?>
-			<li><a href='<?php echo $siteurl; ?>'>Home</a></li>
-			<li><a href='<?php echo $siteurl; ?>/about-us'>About</a></li>
-			<li><a href='<?php echo $siteurl; ?>/services'>Services</a></li>
-			<li><a href='<?php echo $siteurl; ?>/resources'>Resources</a></li>
-			<li><a href='<?php echo $siteurl; ?>/connect'>Connect</a></li>
-		</ul>
+		<div id='headerNav' class='clear'>
+			<h2 class='left'>English Ministry</h2>
+			<ul class='left'>
+				<?php $siteurl = get_option("siteurl"); ?>
+				<li><a href='<?php echo $siteurl; ?>'>Home</a></li>
+				<li><a href='<?php echo $siteurl; ?>/about-us'>About</a></li>
+				<li><a href='<?php echo $siteurl; ?>/services'>Services</a></li>
+				<li><a href='<?php echo $siteurl; ?>/resources'>Resources</a></li>
+				<li><a href='<?php echo $siteurl; ?>/connect'>Connect</a></li>
+			</ul>
+		</div>
 	</header>
 
 	<div id="main" class="wrapper">

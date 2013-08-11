@@ -1757,9 +1757,10 @@ header h2 {
 }
 header ul {
 	list-style-type: none;
-	font-size: 1.3em;
+	font-size: 1.4em;
 	clear: both;
-	margin-bottom: 15px;
+	margin-top: 8px;
+	margin-left: 62px;
 	text-transform: uppercase;
 }
 header li {
@@ -1816,7 +1817,6 @@ header li a {
 /* INDEX */
 
 .index > section {
-	min-height: 100px;
 	position: relative;
 	border: 1px solid #CCC;
 	margin-bottom: 20px;
@@ -1848,7 +1848,7 @@ header li a {
 	z-index: 3;
 }
 .index > section:hover .bg {
-	opacity: 0.5;
+	opacity: 0.6;
 }
 .index > section#about .bg {
 	background-image: url('img2/aboutShrunk.jpg');
@@ -1874,7 +1874,6 @@ header li a {
 section .content {
 	padding: 5px;
 	opacity: 0.2;
-	width: 50%;
 	text-align: right;
 }
 section:hover .content {
@@ -1903,7 +1902,6 @@ section:hover .content {
 	float: right;
 	width: 200px;
 	height: 120px;
-	/*border: 1px solid #666;*/
 	position: relative;
 }
 #resources .content a:first-child {
@@ -1911,14 +1909,17 @@ section:hover .content {
 }	
 #resources .content section {
 	width: 100%;
-	height: 100%;
 	margin-top: -60px;
 	top: 75%;
 	text-align: center;
 	position: absolute;
 }
+#resources .content section.sermon {
+	top: 65%;
+}
 .contentHeader {
 	font-size: 0.65em;
+	line-height: 1.2em;
 }
 .contentTitle {
 	font-weight: bold;
@@ -1927,4 +1928,19 @@ section:hover .content {
 	padding-left: 0px;
 	font-weight: bold;
 	padding-bottom: 20px;
+}
+#about .content > div {
+	line-height: 1.2em;
+}
+.marginBottom {
+	margin-bottom: 20px;
+}
+.youtubeWrapper {
+	margin-top: 10px;
+}
+#headerNav h2, #headerNav ul {
+	clear: none;
+}
+.marginTopForty {
+	margin-top: 40px;
 }

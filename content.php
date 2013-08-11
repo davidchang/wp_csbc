@@ -13,6 +13,10 @@
 			font-size: 3em;
 			text-decoration: none;
 		}
+		.dateh3 {
+			font-size: 1.5em;
+			line-height: 1.5em;
+		}
 	</style>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -25,6 +29,7 @@
 			<?php the_post_thumbnail(); ?>
 			<?php if ( is_single() ) : ?>
 			<h1><?php the_title(); ?></h1>
+			<h3 class='dateh3'><?php the_date(); ?></h3>
 			<?php else : ?>
 			<h1 class="entry-title">
 				<a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'twentytwelve' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a>
@@ -38,8 +43,22 @@
 		</div><!-- .entry-summary -->
 		<?php else : ?>
 		<div class="entry-content">
-			<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
-			<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'twentytwelve' ), 'after' => '</div>' ) ); ?>
+			<?php $custom_fields = get_post_custom(); if(!$custom_fields['youtube']) { ?>
+
+				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>
+				<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'twentytwelve' ), 'after' => '</div>' ) ); ?>
+
+			<?php } else { ?>
+
+				<div class='youtubeWrapper'>
+					<iframe width="100%" height="450" src="//www.youtube.com/embed/<?php echo $custom_fields['youtube'][0]; ?>" frameborder="0" allowfullscreen></iframe>
+				</div>
+
+				<div class='soundcloudWrapper'>
+					<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F<?php echo $custom_fields['soundcloud'][0]; ?>"></iframe>
+				</div>
+
+			<?php } ?>
 		</div><!-- .entry-content -->
 		<?php endif; ?>
 

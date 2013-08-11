@@ -60,7 +60,7 @@ get_header(); ?>
 
 			<?php
 				$siteurl = get_option("siteurl");
-				function getPosts($type) {
+				function getPosts($type,$number=5) {
 					if($type == 'midweek')
 						$cat = 8;
 					else if($type == 'mini message')
@@ -69,9 +69,9 @@ get_header(); ?>
 						$cat = 11;
 
 					if(!$cat)
-						query_posts('posts_per_page=5');	
+						query_posts('posts_per_page=$number');	
 					else
-						query_posts("cat=$cat&posts_per_page=5");
+						query_posts("cat=$cat&posts_per_page=$number");
 				}
 			?>
 
@@ -83,10 +83,14 @@ get_header(); ?>
 
 				while (have_posts()) : the_post(); ?>
 
+					<?php $custom_fields = get_post_custom(); if(!$custom_fields['youtube']) continue; ?>
+
 					<section>
 					  <h2><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 					  <div class='date'><?php the_date(); ?></div>
-					  <?php the_excerpt(); ?>
+					  <div class='youtubeWrapper'>
+					  	<iframe width="560" height="315" src="//www.youtube.com/embed/<?php echo $custom_fields['youtube'][0]; ?>" frameborder="0" allowfullscreen></iframe>
+					  </div>
 					</section>
 
 				<?php endwhile; ?>
