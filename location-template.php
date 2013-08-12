@@ -63,8 +63,9 @@ get_header(); ?>
 						</tr>
 					</tbody>
 				</table>
-				<div>Need a ride? We'd be more than happy to pick you up. Email us at rides@csbc.com</div>
-				<div class='marginTop'>To see a more detailed list of our events and how you can connect, click <a href='/connect'>here</a>.</div>
+				<div>Need a ride? We'd be more than happy to pick you up. Email us at Need more information? Please email us at <a href="mailto:rides@csbcseattle.org">rides@csbcseattle.org</a></div>
+				<?php $siteurl = get_option("siteurl"); ?>
+				<div class='marginTop'>To see a more detailed list of our events and how you can connect, click <a href='<?php echo $siteurl; ?>/connect'>here</a>.</div>
 			</section>
 			<section>
 				<h1>Our location:</h1>

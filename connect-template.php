@@ -39,12 +39,21 @@ get_header(); ?>
 		margin-right: 11px;
 		border-right: 1px solid #CCC;
 	}
+	#moreInfo {
+		margin-bottom: 15px;
+		font-size: 1.2em;
+		line-height: 1.2em;
+		font-style: italic;
+	}
 </style>
 
 	<div id="primary" class="site-content">
 		<div id="content" role="main" class='pageSection clear'>
 			<section id='recurringEvents' class='halfWidth left'>
 				<h1>Recurring Events:</h1>
+				<section id='moreInfo'>
+					Need more information? Please email us at <a href="mailto:info@csbcseattle.org">info@csbcseattle.org</a>
+				</section>
 				<section id='guysGroup'>
 					<h3>Guy's Group</h3>
 					<div class='setting'>Every other Wednesday at 6:30pm</div>
@@ -72,6 +81,13 @@ get_header(); ?>
 				<section>
 					<h3>Marriage Group</h3>
 					<div class='setting'>Every other Monday at 6:30pm</div>
+					<div class='description'>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</div>
+				</section>
+				<section>
+					<h3>ExeJesus</h3>
+					<div class='setting'>Thursdays at 6:30pm before Food and Friend Night</div>
 					<div class='description'>
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					</div>

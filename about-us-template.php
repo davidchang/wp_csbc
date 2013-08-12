@@ -26,6 +26,8 @@ get_header(); ?>
 	}
 </style>
 
+<?php $siteurl = get_option("siteurl"); ?>
+
 	<div id="primary" class="site-content">
 		<div id="content" role="main" class='aboutUsSection'>
 			<section>
@@ -42,7 +44,7 @@ get_header(); ?>
 					 We believe that Jesus Christ is the way, the truth, and the life; further, we affirm that Jesus died on the cross for the sins of the world and only through believing and surrendering to Him can a person receive salvation. We strive to submit to the authority of the Bible in all our ministries. Our primary goal is to make disciples of Jesus Christ who are passionate for His glory. Our mission is to spread the gospel to all nations.
 				</p>
 				<p>
-					For a more formal outline of our beliefs, click <a href='/beliefs'>here</a>.
+					For a more formal outline of our beliefs, click <a href='<?php echo $siteurl; ?>/beliefs'>here</a>.
 				</p>
 			</section>
 
@@ -55,7 +57,7 @@ get_header(); ?>
 
 			<section>
 				<h1>How we got here:</h1>
-				<p>Find out more about Pastor Matt <a href='/pastor-matt'>here</a></p>
+				<p>Find out more about Pastor Matt <a href='<?php echo $siteurl; ?>/pastor-matt'>here</a></p>
 				<p>
 					TODO: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 				</p>

@@ -96,7 +96,7 @@
 	</div>
 
 	<div>
-		<h1>Last 5 Sunday Mini Messages</h1>
+		<h1>Last 5 Messages From the Pastor</h1>
 
 		<div>
 
