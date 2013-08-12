@@ -1889,13 +1889,10 @@ section:hover .content {
 	padding-left: 25px;
 	text-align: right;
 }
-#resources, #connect {
-	height: 143px;
-}
-#resources .content {
+.postBox .content {
 	width: 70%;
 }
-#resources .content a {
+.postBox .content a {
 	margin-right: 20px;
 	text-decoration: none;
 	color: #333;
@@ -1904,17 +1901,17 @@ section:hover .content {
 	height: 120px;
 	position: relative;
 }
-#resources .content a:first-child {
+.postBox .content a:first-child {
 	margin-right: 0px;
 }	
-#resources .content section {
+.postBox .content section {
 	width: 100%;
 	margin-top: -60px;
 	top: 75%;
 	text-align: center;
 	position: absolute;
 }
-#resources .content section.sermon {
+.postBox .content section.sermon {
 	top: 65%;
 }
 .contentHeader {
@@ -1943,4 +1940,7 @@ section:hover .content {
 }
 .marginTopForty {
 	margin-top: 40px;
+}
+.marginTopFifteen {
+	margin-top: 15px;
 }

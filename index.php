@@ -29,7 +29,7 @@ get_header(); ?>
 					Beliefs
 					Pastor Matt
 					Resources
-						Blog
+					Connect
 				-->
 
 				<!-- resources:
@@ -116,16 +116,6 @@ get_header(); ?>
 					</div>
 				</section>
 
-				<section id='connect'>
-					<h2><a href='<?php echo $siteurl; ?>/connect'>Connect.</a></h2>
-					<div class='bg'></div>
-					<!--
-					<div class='content'>
-						<iframe src="https://www.google.com/calendar/embed?mode=AGENDA&amp;height=120&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=krucial206%40gmail.com&amp;color=%23182C57&amp;ctz=America%2FLos_Angeles" style=" border-width:0 " width="940" height="120" frameborder="0" scrolling="no"></iframe>
-					</div>
-					-->
-				</section>
-
 				<?php
 					function getPosts($type,$number=5) {
 						$dontFeatureCat = 19;
@@ -145,7 +135,25 @@ get_header(); ?>
 					}
 				?>
 
-				<section id='resources'>
+				<section id='connect' class='postBox'>
+					<h2><a href='<?php echo $siteurl; ?>/connect'>Connect.</a></h2>
+					<div class='bg'></div>
+					<div class='content'>
+						<!--
+							<iframe src="https://www.google.com/calendar/embed?mode=AGENDA&amp;height=120&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=krucial206%40gmail.com&amp;color=%23182C57&amp;ctz=America%2FLos_Angeles" style=" border-width:0 " width="940" height="120" frameborder="0" scrolling="no"></iframe>
+						-->
+						<?php getPosts('event', 1); while (have_posts()) : the_post(); ?>
+							<a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
+								<section class='midweek'>
+								  	<div class='contentHeader'>Latest Midweek Encouragement:</div>
+								  	<div class='contentTitle'><?php the_title(); ?></div>
+								</section>
+							</a>
+						<?php endwhile; ?>
+					</div>
+				</section>
+
+				<section id='resources' class='postBox'>
 					<h2><a href='<?php echo $siteurl; ?>/resources'>Resources.</a></h2>
 					<div class='bg'></div>
 					<div class='content'>
