@@ -34,19 +34,32 @@
 
 <body <?php body_class(); ?>>
 <div id='mainContainer'>
-	<header>
-		<h1>Chinese Southern Baptist Church</h1>
-		<div id='headerNav' class='clear'>
-			<h2 class='left'>English Ministry</h2>
-			<ul class='left'>
-				<?php $siteurl = get_option("siteurl"); ?>
-				<li><a href='<?php echo $siteurl; ?>'>Home</a></li>
-				<li><a href='<?php echo $siteurl; ?>/about-us'>About</a></li>
-				<li><a href='<?php echo $siteurl; ?>/services'>Services</a></li>
-				<li><a href='<?php echo $siteurl; ?>/connect'>Connect</a></li>
-				<li><a href='<?php echo $siteurl; ?>/resources'>Resources</a></li>
-			</ul>
-		</div>
-	</header>
+  <header class='clear'>
+    <div id='logo' class='left'><!--<div id='logoDiv'></div>-->
+      <img src='wp-content/themes/csbc-custom/img/csbc-logo.png' alt='CSBC logo'></img>
+    </div>
+    
+    <div id='englishMinistry' class='left'>
+      <div>English</div>
+      <div>Ministry</div>
+    </div>
+    <ul id='links' class='right'>
+      <li>
+        <a href='about'>About</a>
+      </li>
+      <li>
+        <a href='about'>Visit</a>
+      </li>
+      <li>
+        <a href='about'>Sermons</a>
+      </li>
+      <li>
+        <a href='about'>Connect</a>
+      </li>
+      <li>
+        <a href='about'>Events</a>
+      </li>
+    </ul>
+  </header>
 
-	<div id="main" class="wrapper">
+  <div id="main" class="wrapper">

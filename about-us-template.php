@@ -9,58 +9,60 @@
 
 get_header(); ?>
 
-<style>
-	.aboutUsSection h1 {
-		font-size: 2.5em;
-		margin-bottom: 10px;
-	}
-	.site-content {
-		margin-top: 0px;
-	}
-	.aboutUsSection section {
-		margin-bottom: 35px;
-	}
-	.aboutUsSection p {
-		margin: 10px 0px;
-		font-size: 1.3em;
-	}
-</style>
-
 <?php $siteurl = get_option("siteurl"); ?>
 
 	<div id="primary" class="site-content">
 		<div id="content" role="main" class='aboutUsSection'>
-			<section>
-				<h1>Who we are:</h1>
-				<p>We are the English Speaking Ministry of Chinese Southern Baptist Church.</p>
-				<p>
-					TODO: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-				</p>
+			<section id='aboutMain' class='clear'>
+				<div class='left' id='aboutSermonHolder'>
+					<iframe width="100%" height="315" src="//www.youtube.com/embed/e4t7ovZTqR4" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div class='right' id='aboutUsDescription'>
+					We are the English Speaking Ministry of Chinese Southern Baptist Church. We believe that Jesus Christ is the way, the truth, and the life; further, we affirm that Jesus died on the cross for the sins of the world and only through believing and surrendering to Him can a person receive salvation. We strive to submit to the authority of the Bible in all our ministries. Our primary goal is to make disciples of Jesus Christ who are passionate for His glory. Our mission is to spread the gospel to all nations. (See <a href='<?php echo $siteurl; ?>/beliefs'>Beliefs</a>)
+				</div>
 			</section>
 
-			<section>
-				<h1>Our beliefs:</h1>
-				<p>
-					 We believe that Jesus Christ is the way, the truth, and the life; further, we affirm that Jesus died on the cross for the sins of the world and only through believing and surrendering to Him can a person receive salvation. We strive to submit to the authority of the Bible in all our ministries. Our primary goal is to make disciples of Jesus Christ who are passionate for His glory. Our mission is to spread the gospel to all nations.
-				</p>
-				<p>
-					For a more formal outline of our beliefs, click <a href='<?php echo $siteurl; ?>/beliefs'>here</a>.
-				</p>
+			<section id='bios' class='clear'>
+				<h1>Pastors</h1>
+				<section class='oneHalf left'>
+					<div>
+						<img src="http://www.krucial206.org/wp-content/uploads/2011/06/332-2-Copy-300x225.jpg" alt="">
+					</div>
+					<h1>Matthew Zwitt</h1>
+					<h2>LEAD TEACHING PASTOR</h2>
+					<div class='bioDescription'>
+						Pastor Matthew Zwitt is originally from Mobile, AL. He and his wife Lauren were married in 2008, and have three sons: Abraham (2009) Josiah (2010), and Moses (2011). He graduated with his Bachelors of Arts in Christian Ministry from Leavell College in New Orleans, LA in 2008 and graduated from New Orleans Baptist Theological Seminary with his Master of Divinity in 2011. He was Licensed in 2010 and Ordained in 2011 by First Baptist Lacombe. Pastor Matt has been serving in ministry since 2005, as a College Minister, Preacher, and Pastoral Intern. In June 2011 God called Matt to the city of Seattle to serve as English Minister of CSBC. His passion is to teach the Word of God, disciple believers, and evangelize the lost.
+					</div>
+				</section>
+
+				<section class='oneHalf right'>
+					<div>
+						<img src="http://www.krucial206.org/wp-content/uploads/2011/06/332-2-Copy-300x225.jpg" alt="">
+					</div>
+					<h1>Matthew Zwitt</h1>
+					<h2>LEAD TEACHING PASTOR</h2>
+					<div class='bioDescription'>
+						Pastor Matthew Zwitt is originally from Mobile, AL. He and his wife Lauren were married in 2008, and have three sons: Abraham (2009) Josiah (2010), and Moses (2011). He graduated with his Bachelors of Arts in Christian Ministry from Leavell College in New Orleans, LA in 2008 and graduated from New Orleans Baptist Theological Seminary with his Master of Divinity in 2011. He was Licensed in 2010 and Ordained in 2011 by First Baptist Lacombe. Pastor Matt has been serving in ministry since 2005, as a College Minister, Preacher, and Pastoral Intern. In June 2011 God called Matt to the city of Seattle to serve as English Minister of CSBC. His passion is to teach the Word of God, disciple believers, and evangelize the lost.
+					</div>
+				</section>
 			</section>
 
-			<section>
-				<h1>Get to know us:</h1>
-				<p>
-					TODO: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-				</p>
-			</section>
-
-			<section>
-				<h1>How we got here:</h1>
-				<p>Find out more about Pastor Matt <a href='<?php echo $siteurl; ?>/pastor-matt'>here</a></p>
-				<p>
-					TODO: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-				</p>
+			<section id='getToKnowUs' class='clear'>
+				<h1>Get to Know Us</h1>
+				<div class='clear'>
+					<div class='holder left'>
+						Text
+					</div>
+					<div class='holder left'>
+						Text
+					</div>
+					<div class='holder left'>
+						Text
+					</div>
+					<div class='holder left'>
+						Text
+					</div>
+				</div>
 			</section>
 		</div><!-- #content -->
 	</div><!-- #primary -->
