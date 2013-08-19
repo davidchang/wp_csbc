@@ -15,11 +15,15 @@
  */
 get_header(); ?>
 
-	<div id="primary">
+	<div id="primary" class='indexTemplate'>
    <div id="content" role="main">
      <section>
        <div id='carousel'>
-         <a href='#/carousel1'><div id='slide1' class='slide'></div></a>
+         <a href='#/carousel1'><div id='slide1' class='slide active'></div></a>
+         <a href='#/carousel2'><div id='slide2' class='slide'></div></a>
+         <a href='#/carousel3'><div id='slide3' class='slide'></div></a>
+         <a href='#/carousel4'><div id='slide4' class='slide'></div></a>
+         <a href='#/carousel5'><div id='slide5' class='slide'></div></a>
        </div>
      </section>
      
@@ -46,31 +50,30 @@ get_header(); ?>
          Listen
        </div>
      </section>
-     
-     <section id='boxes' class='clear'>
-       <div id='resources' class='boxDiv'>
-         <a href='resources'>
-           <div class='box'></div>
-         </a>
-       </div>
-       <div id='events' class='boxDiv'>
-         <a href='events'>
-           <div class='box'></div>
-         </a>
-       </div>
-       <div id='location' class='boxDiv'>
-         <a href='location'>
-           <div class='box'></div>
-         </a>
-       </div>
-       <div id='contact' class='boxDiv'>
-         <a href='contact'>
-           <div class='box'></div>
-         </a>
-       </div>
-     </section>
+
+     <section class='boxHolder'>
+        <div class='clear'>
+          <div id='resourcesBox'><a href='<?php echo $siteurl; ?>/resources'>Resources</a></div>
+          <div id='eventsBox'><a href='<?php echo $siteurl; ?>/events'>News & Events</a></div>
+          <div id='locationBox'><a href='<?php echo $siteurl; ?>/visit'>Location</a></div>
+          <div id='contactBox'><a href='<?php echo $siteurl; ?>/connect'>Contact</a></div>
+        </div>
+      </section>
 
    </div><!-- #content -->
  </div><!-- #primary -->
+
+ <script>
+    var slides = document.querySelectorAll('.slide'),
+      index = 0,
+      interval = 5000,
+      origClass = 'slide',
+      activeClass = 'slide active';
+    setInterval(function() {
+      slides[index].className = origClass;
+      index = (index + 1) % slides.length;
+      slides[index].className = activeClass;
+    }, interval);
+ </script>
 
 <?php get_footer(); ?>

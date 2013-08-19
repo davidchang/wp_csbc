@@ -11,11 +11,11 @@ get_header(); ?>
 
 <?php $siteurl = get_option("siteurl"); ?>
 
-	<div id="primary" class="site-content">
-		<div id="content" role="main" class='aboutUsSection'>
+	<div id="primary" class="site-content aboutTemplate">
+		<div id="content" role="main">
 			<section id='aboutMain' class='clear'>
 				<div class='left' id='aboutSermonHolder'>
-					<iframe width="100%" height="315" src="//www.youtube.com/embed/e4t7ovZTqR4" frameborder="0" allowfullscreen></iframe>
+					<iframe src="//www.youtube.com/embed/e4t7ovZTqR4" frameborder="0" allowfullscreen></iframe>
 				</div>
 				<div class='right' id='aboutUsDescription'>
 					We are the English Speaking Ministry of Chinese Southern Baptist Church. We believe that Jesus Christ is the way, the truth, and the life; further, we affirm that Jesus died on the cross for the sins of the world and only through believing and surrendering to Him can a person receive salvation. We strive to submit to the authority of the Bible in all our ministries. Our primary goal is to make disciples of Jesus Christ who are passionate for His glory. Our mission is to spread the gospel to all nations. (See <a href='<?php echo $siteurl; ?>/beliefs'>Beliefs</a>)
@@ -23,10 +23,10 @@ get_header(); ?>
 			</section>
 
 			<section id='bios' class='clear'>
-				<h1>Pastors</h1>
+				<h1 class='bigAndBordered'>Pastors</h1>
 				<section class='oneHalf left'>
 					<div>
-						<img src="http://www.krucial206.org/wp-content/uploads/2011/06/332-2-Copy-300x225.jpg" alt="">
+						<img src="/wordpress/wp-content/themes/csbc-custom/img/about/zwitts.png" alt="">
 					</div>
 					<h1>Matthew Zwitt</h1>
 					<h2>LEAD TEACHING PASTOR</h2>
@@ -37,7 +37,7 @@ get_header(); ?>
 
 				<section class='oneHalf right'>
 					<div>
-						<img src="http://www.krucial206.org/wp-content/uploads/2011/06/332-2-Copy-300x225.jpg" alt="">
+						<img src="/wordpress/wp-content/themes/csbc-custom/img/about/zwitts.png" alt="">
 					</div>
 					<h1>Matthew Zwitt</h1>
 					<h2>LEAD TEACHING PASTOR</h2>
@@ -47,21 +47,13 @@ get_header(); ?>
 				</section>
 			</section>
 
-			<section id='getToKnowUs' class='clear'>
-				<h1>Get to Know Us</h1>
+			<section class='boxHolder'>
+				<h1 class='bigAndBordered'>Get to Know Us</h1>
 				<div class='clear'>
-					<div class='holder left'>
-						Text
-					</div>
-					<div class='holder left'>
-						Text
-					</div>
-					<div class='holder left'>
-						Text
-					</div>
-					<div class='holder left'>
-						Text
-					</div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
 				</div>
 			</section>
 		</div><!-- #content -->

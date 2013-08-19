@@ -35,29 +35,26 @@
 <body <?php body_class(); ?>>
 <div id='mainContainer'>
   <header class='clear'>
-    <div id='logo' class='left'><!--<div id='logoDiv'></div>-->
-      <img src='wp-content/themes/csbc-custom/img/csbc-logo.png' alt='CSBC logo'></img>
-    </div>
+    <div id='logoDiv' class='left'></div>
     
     <div id='englishMinistry' class='left'>
-      <div>English</div>
-      <div>Ministry</div>
+      English Ministry
     </div>
     <ul id='links' class='right'>
       <li>
-        <a href='about'>About</a>
+        <a href='<?php echo $siteurl; ?>/about-us'>About</a>
       </li>
       <li>
-        <a href='about'>Visit</a>
+        <a href='<?php echo $siteurl; ?>/visit'>Visit</a>
       </li>
       <li>
-        <a href='about'>Sermons</a>
+        <a href='<?php echo $siteurl; ?>/resources'>Resources</a> 
       </li>
       <li>
-        <a href='about'>Connect</a>
+        <a href='<?php echo $siteurl; ?>/connect'>Connect</a>
       </li>
       <li>
-        <a href='about'>Events</a>
+        <a href='<?php echo $siteurl; ?>/events'>Events</a>
       </li>
     </ul>
   </header>

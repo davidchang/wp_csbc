@@ -458,3 +458,20 @@ function custom_excerpt_length( $length ) {
 	return 25;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+$siteurl = get_option("siteurl");
+function getPosts($type,$number=5) {
+	if($type == 'midweek')
+		$cat = 8;
+	else if($type == 'mini message')
+		$cat = 7;
+	else if($type == 'sermon')
+		$cat = 11;
+	else if($type == 'from the pastor')
+		$cat = '7,8';
+
+	if(!$cat)
+		query_posts('posts_per_page=$number');	
+	else
+		query_posts("cat=$cat&posts_per_page=$number");
+}

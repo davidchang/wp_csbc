@@ -1776,116 +1776,122 @@ body {
   border-left: 1px solid #CCC;
 }
 header {
-  margin: 0px 0px 23px;
+  margin: -5px 0px 23px;
   border-bottom: 2px solid #CCC;
   text-transform: uppercase;
 }
-#logo {
-  height: 120px;
-  width: 180px;
-  margin-left: -30px;
-  margin-top: -10px;
-}
-#logo > img {
-  width: 100%;
-  height: 100%;
-}
-#logoDiv {
-  background: url("img/csbc-logo.png") no-repeat center center fixed;
-  background-size: 100%;
-  height: 100px;
+header #logoDiv {
+  background: url("img/logo.png");
+  background-size: 100% 100px;
+  height: 90px;
   width: 100px;
 }
-#englishMinistry {
-  font-size: 1.7em;
-  margin-top: 15px;
+header #englishMinistry {
+  font-size: 1.8em;
+  margin-top: 33px;
+  margin-left: 15px;
 }
-#links {
+header #links {
   list-style: none;
   font-size: 1.2em;
-  margin-bottom: 0em;
-  margin-top: 1.6em;
+  margin-bottom: 0px;
+  margin-top: 60px;
 }
-#links li {
+header #links li {
   float: left;
   margin-right: 20px;
   font-size: 1.3em;
 }
-#links a {
+header #links a {
   text-decoration: none;
   color: black;
 }
 #carousel {
   height: 400px;
   position: relative;
+  /*
+  &:before {
+    content: '<';
+    position: absolute;
+    z-index: 2;
+    top: 170px;
+    left: -22px;
+    background-color: white;
+    border: 1px solid #222;
+    padding: 0px 10px;
+    font-size: 2em;
+  }
+  &:after {
+    content: '>';
+    position: absolute;
+    z-index: 2;
+    top: 170px;
+    right: -22px;
+    background-color: white;
+    border: 1px solid #222;
+    padding: 0px 10px;
+    font-size: 2em;
+  }
+  */
+
 }
-.slide {
+#carousel .slide {
+  width: 100%;
   height: 100%;
   background-size: 100%;
-  opacity: 0.9;
-}
-.slide:hover {
-  opacity: 1.0;
-}
-#slide1 {
-  background-image: url("img/carousel1.png");
-}
-/*
-#carousel:before {
-  content: '<';
   position: absolute;
-  z-index: 2;
-  top: 170px;
-  left: -22px;
-  background-color: white;
-  border: 1px solid #222;
-  padding: 0px 10px;
-  font-size: 2em;
+  z-index: 100;
 }
-#carousel:after {
-  content: '>';
-  position: absolute;
-  z-index: 2;
-  top: 170px;
-  right: -22px;
-  background-color: white;
-  border: 1px solid #222;
-  padding: 0px 10px;
-  font-size: 2em;
+#carousel .slide.active {
+  z-index: 1000;
 }
-*/
+#carousel #slide1 {
+  background-image: url("img/carousel/praiseteam.png");
+}
+#carousel #slide2 {
+  background-image: url("img/carousel/praisenightsharing.png");
+}
+#carousel #slide3 {
+  background-image: url("img/carousel/vbs.png");
+}
+#carousel #slide4 {
+  background-image: url("img/carousel/vbs2.png");
+}
+#carousel #slide5 {
+  background-image: url("img/carousel/sundayschool.png");
+}
 #latestMessageSection {
   border-top: 2px solid #DDD;
   border-bottom: 2px solid #DDD;
   padding: 10px 0px;
   margin: 20px 0px;
 }
-#latestMessage {
+#latestMessageSection #latestMessage {
   margin-right: 20px;
   margin-left: 15px;
   font-size: 1.1em;
   font-size: 1.3em;
 }
-#date {
+#latestMessageSection #date {
   margin-right: 20px;
 }
-#date > div {
+#latestMessageSection #date > div {
   padding: 3px 5px;
   text-align: center;
   color: white;
   background-color: #800000;
 }
-#date > div:first-child {
+#latestMessageSection #date > div:first-child {
   margin-bottom: 1px;
 }
-#sermonTitle div:first-child {
+#latestMessageSection #sermonTitle div {
+  font-size: 1.1em;
+}
+#latestMessageSection #sermonTitle div:first-child {
   font-size: 1.7em;
   margin-bottom: 2px;
 }
-#sermonTitle div {
-  font-size: 1.1em;
-}
-.button {
+#latestMessageSection .button {
   padding: 5px 12px;
   margin-top: 4px;
   background-color: #AAA;
@@ -1894,34 +1900,12 @@ header {
   border-radius: 5px;
   cursor: pointer;
 }
-#listen,
-#download {
+#latestMessageSection #listen,
+#latestMessageSection #download {
   margin-right: 10px;
 }
-#slides {
+#latestMessageSection #slides {
   margin-right: 15px;
-}
-#boxes {
-  text-transform: uppercase;
-  font-size: 1.2em;
-  margin-bottom: 60px;
-}
-#boxes > .boxDiv:first-child {
-  margin-left: 0px;
-}
-.boxDiv {
-  float: left;
-  width: 236px;
-  margin-left: 22px;
-}
-.box {
-  margin-bottom: 5px;
-  width: 236px;
-  height: 177px;
-  opacity: 0.8;
-}
-.boxDiv:hover .box {
-  opacity: 1.0;
 }
 .left {
   float: left;
@@ -1932,17 +1916,8 @@ header {
 .cap {
   text-transform: uppercase;
 }
-#boxes #resources .box {
-  background-image: url("img/resources.png");
-}
-#boxes #events .box {
-  background-image: url("img/events.png");
-}
-#boxes #location .box {
-  background-image: url("img/location.png");
-}
-#boxes #contact .box {
-  background-image: url("img/contact.png");
+.caps {
+  text-transform: uppercase;
 }
 .entry-content {
   position: relative;
@@ -1982,50 +1957,9 @@ header {
 .oneHalf {
   width: 48%;
 }
-.aboutUsSection #aboutMain {
-  padding: 20px;
-  background-color: #999;
-  min-height: 317px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-.aboutUsSection #aboutSermonHolder {
-  width: 60%;
-  height: 250px;
-  margin-right: 20px;
-}
-.aboutUsSection #aboutUsDescription {
-  width: 37%;
-  color: #EEE;
-  font-size: 1.3em;
-  line-height: 1.3em;
-  margin-top: 8px;
-}
-.aboutUsSection #bios {
-  margin: 20px 0px;
-}
-.aboutUsSection #bios img {
-  width: 100%;
-}
-.aboutUsSection #bios .bioDescription {
-  line-height: 1.2em;
-}
-.aboutUsSection #getToKnowUs .holder {
-  width: 243px;
-  height: 150px;
-  border: 1px solid #CCC;
-  background-color: gray;
-  margin: 0px 5px;
-}
-.aboutUsSection #getToKnowUs .holder:first-child {
-  margin-left: 0px;
-}
-.aboutUsSection #getToKnowUs .holder:last-child {
-  margin-right: 0px;
-}
 .site-content {
   margin-bottom: 100px;
+  margin-top: 0px;
 }
 h1 {
   font-size: 1.3em;
@@ -2035,9 +1969,150 @@ h2 {
   font-size: 1em;
   margin-bottom: 10px;
 }
-#content > section > h1 {
+iframe {
+  width: 100%;
+  height: 100%;
+}
+#primary #aboutMain {
+  padding: 20px;
+  background-color: #999;
+  min-height: 317px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#primary #aboutSermonHolder {
+  width: 60%;
+  height: 328px;
+  margin-right: 20px;
+}
+#primary #aboutUsDescription {
+  width: 37%;
+  color: #EEE;
+  font-size: 1.3em;
+  line-height: 1.3em;
+  margin-top: 8px;
+}
+#primary #bios {
+  margin: 20px 0px;
+}
+#primary #bios img {
+  width: 100%;
+}
+#primary #bios .bigAndBordered {
+  margin-bottom: 20px;
+}
+#primary #bios .bioDescription {
+  line-height: 1.2em;
+}
+#primary .boxHolder > .clear > div {
+  float: left;
+  width: 243px;
+  height: 150px;
+  border: 1px solid #CCC;
+  background-color: gray;
+  margin: 10px 5px 0px;
+}
+#primary .boxHolder > .clear > div:nth-child(4n+1) {
+  margin-left: 0px;
+}
+#primary .boxHolder > .clear > div:nth-child(4n) {
+  margin-right: 0px;
+}
+#primary .big {
+  font-size: 3em;
+}
+#primary .bigAndBordered {
   font-size: 3em;
   border-top: 2px solid #CCC;
   padding-top: 15px;
+  margin-top: 25px;
+}
+.indexTemplate #resourcesBox {
+  background-image: url("img/quicklinks/resources.png");
+}
+.indexTemplate #eventsBox {
+  background-image: url("img/quicklinks/newsevents.png");
+}
+.indexTemplate #locationBox {
+  background-image: url("img/quicklinks/location.png");
+}
+.indexTemplate #contactBox {
+  background-image: url("img/quicklinks/contact.png");
+}
+.indexTemplate .boxHolder .clear > div {
+  text-transform: lowercase;
+  text-align: center;
+  font-size: 2.5em;
+  line-height: 150px;
+  background-size: 100%;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.indexTemplate .boxHolder .clear > div > a {
+  display: block;
+  color: #EEE;
+  text-decoration: none;
+}
+.locationTemplate {
+  line-height: 1.4em;
+}
+.locationTemplate #mapHolder {
+  height: 300px;
+}
+.locationTemplate .info {
+  margin-top: 20px;
+}
+.locationTemplate h3 {
+  margin: 20px 0px 0px;
+}
+.locationTemplate h1 {
+  font-weight: normal;
+  font-size: 1.8em;
   margin-bottom: 15px;
+}
+.locationTemplate form {
+  background-color: #EEE;
+  border: 1px solid #CCC;
+  padding: 15px 20px;
+}
+.locationTemplate form input {
+  width: 97%;
+  font-size: 1.1em;
+  margin-bottom: 5px;
+}
+.locationTemplate form textarea {
+  width: 97%;
+  height: 200px;
+}
+.locationTemplate form button {
+  float: right;
+  margin-top: 10px;
+  font-size: 1.2em;
+  background-color: #CCC;
+}
+.connectTemplate #calHolder {
+  height: 500px;
+}
+.connectTemplate #groupsHolder {
+  margin-top: 25px;
+}
+.connectTemplate .boxHolder .clear > div {
+  background-size: 100%;
+}
+.connectTemplate #marriageGroup {
+  background-image: url("img/connect/MarriageGroup.png");
+}
+.connectTemplate #girlsGroup {
+  background-image: url("img/connect/GirlsGroup.png");
+}
+.connectTemplate #guysGroup {
+  background-image: url("img/connect/GuysGroup.png");
+}
+.connectTemplate #prayerGroup {
+  background-image: url("img/connect/PrayerGroup.png");
+}
+.connectTemplate #exeJesus {
+  background-image: url("img/connect/Exejesus.png");
 }
