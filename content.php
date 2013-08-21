@@ -8,17 +8,6 @@
  */
 ?>
 
-	<style>
-		.csbc-custom h1 {
-			font-size: 3em;
-			text-decoration: none;
-		}
-		.dateh3 {
-			font-size: 1.5em;
-			line-height: 1.5em;
-		}
-	</style>
-
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 		<div class="featured-post">
@@ -51,11 +40,11 @@
 			<?php } else { ?>
 
 				<div class='youtubeWrapper'>
-					<iframe width="100%" height="450" src="//www.youtube.com/embed/<?php echo $custom_fields['youtube'][0]; ?>" frameborder="0" allowfullscreen></iframe>
+					<iframe src="//www.youtube.com/embed/<?php echo $custom_fields['youtube'][0]; ?>" frameborder="0" allowfullscreen></iframe>
 				</div>
 
 				<div class='soundcloudWrapper'>
-					<iframe width="100%" height="166" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F<?php echo $custom_fields['soundcloud'][0]; ?>"></iframe>
+					<iframe scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F<?php echo $custom_fields['soundcloud'][0]; ?>"></iframe>
 				</div>
 
 			<?php } ?>

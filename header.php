@@ -31,14 +31,15 @@
 <link href='http://fonts.googleapis.com/css?family=Didact+Gothic' rel='stylesheet' type='text/css'>
 <?php wp_head(); ?>
 </head>
+<?php $siteurl = get_option("siteurl"); ?>
 
 <body <?php body_class(); ?>>
 <div id='mainContainer'>
   <header class='clear'>
-    <div id='logoDiv' class='left'></div>
+    <div id='logoDiv' class='left'><a href='<?php echo $siteurl; ?>/'></a></div>
     
     <div id='englishMinistry' class='left'>
-      English Ministry
+      <a href='<?php echo $siteurl; ?>/'>English Ministry</a>
     </div>
     <ul id='links' class='right'>
       <li>

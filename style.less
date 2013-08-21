@@ -1728,12 +1728,26 @@ img#wpstats {
 
 
 /* CSBC custom */
+.rounded(@radius: 2px) {
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+  border-radius: @radius;
+}
+.fullDimensions() {
+	width: 100%;
+	height: 100%;
+}
+.left { float: left; }
+.right { float: right; }
+.cap { text-transform: uppercase; }
+.caps { text-transform: uppercase; }
+
 body {
   font-family: 'Didact Gothic', sans-serif;
   background-color: #EEE;
 }
 #mainContainer {
-  width: 1012px; /*1280px;*/
+  max-width: 1012px;
   margin: 0 auto;
   background-color: white;
   padding: 0px 75px;
@@ -1750,11 +1764,20 @@ header {
   	background-size: 100% 100px;
   	height: 90px;
   	width: 100px;
+
+  	a {
+  		display: block;
+  		.fullDimensions();
+  	}
   }
   #englishMinistry {
     font-size: 1.8em;
     margin-top: 33px;
     margin-left: 15px;
+    a {
+    	color: #444;
+    	text-decoration: none;
+    }
   }
   #links {
     list-style: none;
@@ -1779,8 +1802,7 @@ header {
   height: 400px;
   position: relative;
   .slide {
-    width: 100%; 
-    height: 100%;
+    .fullDimensions();
     background-size: 100%;
     position: absolute;
     z-index: 100;
@@ -1849,6 +1871,7 @@ header {
       text-align: center;
       color: white;
       background-color: #800000;
+      min-height: 15px;
     }
     & > div:first-child {
       margin-bottom: 1px;
@@ -1866,23 +1889,16 @@ header {
     padding: 5px 12px;
     margin-top: 4px;
     background-color: #AAA;
-    color: white;
     font-size: 1.3em;
-    border-radius: 5px;
+    .rounded(5px);
     cursor: pointer;
-  }
-  #listen, #download {
     margin-right: 10px;
-  }
-  #slides {
-    margin-right: 15px;
+    a {
+    	color: white;
+    	text-decoration: none;
+    }
   }
 }
-
-.left { float: left; }
-.right { float: right; }
-.cap { text-transform: uppercase; }
-.caps { text-transform: uppercase; }
 
 .entry-content {
   position: relative;
@@ -1924,6 +1940,31 @@ header {
 .oneHalf {
 	width: 48%;
 }
+.boxHolder {
+	& > .clear > div {
+		.left;
+		width: 243px;
+		height: 150px;
+		border: 1px solid #CCC;
+		background-color: gray;
+		margin: 10px 5px 0px;
+		&:nth-child(4n+1) {
+			margin-left: 0px;
+		}
+		&:nth-child(4n) {
+			margin-right: 0px;
+		}
+	}
+}
+.big {
+	font-size: 3em;
+}
+.bigAndBordered {
+	font-size: 3em;
+	border-top: 2px solid #CCC;
+	padding-top: 15px;
+	margin-top: 25px;
+}
 .site-content {
 	margin-bottom: 100px;
 	margin-top: 0px;
@@ -1937,23 +1978,100 @@ h2 {
 	margin-bottom: 10px;
 }
 iframe {
-	width: 100%;
-	height: 100%;
+	.fullDimensions();
 }
-
-.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
-  -webkit-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
-  -moz-box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
-  box-shadow: @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+@media (max-width: 1163px) {
+	.boxHolder > .clear > div {
+		width: 49%;
+		margin: 5px;
+		&:nth-child(even) {
+			margin-right: 0px;
+		}
+		&:nth-child(odd) {
+			margin-left: 0px;
+		}
+	}
 }
-.rounded(@radius: 2px) {
-  -webkit-border-radius: @radius;
-  -moz-border-radius: @radius;
-  border-radius: @radius;
+@media (max-width: 750px) {
+	.boxHolder > .clear > div {
+		width: 48%;
+	}
 }
-
-#primary {
-
+@media (max-width: 700px) {
+	.oneHalf {
+		width: 100%;
+	}
+	.boxHolder > .clear > div {
+			width: 100%;
+			margin: 5px 0px;
+	}
+	.site-content {
+		margin-bottom: 20px;
+	}
+	header {
+		#englishMinistry {
+			max-width: 100px;
+			margin-top: 22px;
+		}
+		#links {
+			float: left;
+			margin-bottom: 10px;
+			li {
+				margin-top: 3px;
+				margin-bottom: 3px;
+			}
+		}
+	}
+}
+@media (max-width: 1075px) {
+	header {
+		#links {
+			margin-top: 0px;
+		}
+	}
+}
+@media (max-width: 1000px) {
+	header {
+		#links {
+			margin-top: 60px;
+		}
+	}
+}
+@media (max-width: 973px) {
+	header {
+		#links {
+			margin-top: 0px;
+		}
+	}
+}
+.indexTemplate {
+  #resourcesBox {
+    background-image: url("img/quicklinks/resources.png");
+  }
+  #eventsBox {
+    background-image: url("img/quicklinks/newsevents.png");
+  }
+  #locationBox {
+    background-image: url("img/quicklinks/location.png");
+  }
+  #contactBox {
+    background-image: url("img/quicklinks/contact.png");
+  }
+  .boxHolder .clear > div {
+    text-transform: lowercase;
+    text-align: center;
+    font-size: 2.5em;
+    line-height: 150px;
+    background-size: 100%;
+    text-shadow: 2px 2px #444;
+    & > a {
+      display: block;
+      color: #EEE;
+      text-decoration: none;
+    }
+  }
+}
+.aboutTemplate {
 	#aboutMain {
 		padding: 20px;
 		background-color: #999;
@@ -1984,58 +2102,23 @@ iframe {
 			line-height: 1.2em;
 		}
 	}
-	.boxHolder {
-		& > .clear > div {
-			.left;
-			width: 243px;
-			height: 150px;
-			border: 1px solid #CCC;
-			background-color: gray;
-			margin: 10px 5px 0px;
-			&:nth-child(4n+1) {
-				margin-left: 0px;
-			}
-			&:nth-child(4n) {
-				margin-right: 0px;
-			}
+}
+@media (max-width: 1000px) {
+	#mainContainer {
+		padding: 0px 25px;
+	}
+	.aboutTemplate {
+		#aboutSermonHolder, #aboutUsDescription {
+			width: 100%;
 		}
 	}
-	.big {
-		font-size: 3em;
-	}
-	.bigAndBordered {
-		font-size: 3em;
-		border-top: 2px solid #CCC;
-		padding-top: 15px;
-		margin-top: 25px;
-	}
 }
-.indexTemplate {
-  #resourcesBox {
-    background-image: url("img/quicklinks/resources.png");
-  }
-  #eventsBox {
-    background-image: url("img/quicklinks/newsevents.png");
-  }
-  #locationBox {
-    background-image: url("img/quicklinks/location.png");
-  }
-  #contactBox {
-    background-image: url("img/quicklinks/contact.png");
-  }
-  .boxHolder .clear > div {
-    text-transform: lowercase;
-    text-align: center;
-    font-size: 2.5em;
-    line-height: 150px;
-    background-size: 100%;
-    .drop-shadow(0, 1px, 2px, 0.2);
-    & > a {
-      display: block;
-      color: #EEE;
-      text-decoration: none;
-    }
-  }
+@media (max-width: 700px) {
+	.aboutTemplate {
+		.oneHalf {
+			margin-bottom: 35px;
+		}
+	}
 }
 .locationTemplate {
 	line-height: 1.4em;
@@ -2099,4 +2182,20 @@ iframe {
 	#exeJesus {
 		background-image: url("img/connect/Exejesus.png");
 	}
+}
+
+.csbc-custom h1 {
+	font-size: 3em;
+	text-decoration: none;
+}
+.dateh3 {
+	font-size: 1.5em;
+	line-height: 1.5em;
+}
+.partialWidth {
+	width: 65%;
+}
+.youtubeWrapper {
+	width: 100%;
+	height: 450px;
 }

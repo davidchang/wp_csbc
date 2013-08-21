@@ -9,12 +9,6 @@
 
 get_header(); ?>
 
-	<style>
-		.partialWidth {
-			width: 65%;
-		}
-	</style>
-
 	<div id="primary">
 		<div id="content" role="main" class='clear'>
 

@@ -459,7 +459,6 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
-$siteurl = get_option("siteurl");
 function getPosts($type,$number=5) {
 	if($type == 'midweek')
 		$cat = 8;

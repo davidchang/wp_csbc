@@ -26,6 +26,9 @@ get_header(); ?>
          <a href='#/carousel5'><div id='slide5' class='slide'></div></a>
        </div>
      </section>
+
+     <?php
+     getPosts('sermon', 1); while (have_posts()) : the_post(); ?>
      
      <section id='latestMessageSection' class='clear cap'>
        <div id='latestMessage' class='left'>
@@ -33,23 +36,23 @@ get_header(); ?>
          <div>Message</div>
        </div>
        <div id='date' class='left'>
-         <div>May</div>
-         <div>26</div>
+         <?php $date = get_the_date('M j'); $datePieces = explode(' ', $date); ?>
+         <div><?php echo $datePieces[0]; ?></div>
+         <div><?php echo $datePieces[1]; ?></div>
        </div>
        <div id='sermonTitle' class='left'>
-         <div>How to be a Man - Part One</div>
+         <div><?php the_title(); ?></div>
          <div>Pastor Matt Zwitt</div>
        </div>
-       <div id='slides' class='right button'>
-         Slides
+       <div class='right button'>
+         <a href='<?php the_permalink() ?>'>Watch</a>
        </div>
-       <div id='download' class='right button'>
-         Download
-       </div>
-       <div id='listen' class='right button'>
-         Listen
+       <div class='right button'>
+         <a href='<?php the_permalink() ?>'>Listen</a>
        </div>
      </section>
+
+     <?php endwhile; ?>
 
      <section class='boxHolder'>
         <div class='clear'>

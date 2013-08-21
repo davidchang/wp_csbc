@@ -1761,14 +1761,24 @@ img#wpstats {
   }
 }
 /* CSBC custom */
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.cap {
+  text-transform: uppercase;
+}
+.caps {
+  text-transform: uppercase;
+}
 body {
   font-family: 'Didact Gothic', sans-serif;
   background-color: #EEE;
 }
 #mainContainer {
-  width: 1012px;
-  /*1280px;*/
-
+  max-width: 1012px;
   margin: 0 auto;
   background-color: white;
   padding: 0px 75px;
@@ -1786,10 +1796,19 @@ header #logoDiv {
   height: 90px;
   width: 100px;
 }
+header #logoDiv a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 header #englishMinistry {
   font-size: 1.8em;
   margin-top: 33px;
   margin-left: 15px;
+}
+header #englishMinistry a {
+  color: #444;
+  text-decoration: none;
 }
 header #links {
   list-style: none;
@@ -1880,6 +1899,7 @@ header #links a {
   text-align: center;
   color: white;
   background-color: #800000;
+  min-height: 15px;
 }
 #latestMessageSection #date > div:first-child {
   margin-bottom: 1px;
@@ -1895,29 +1915,16 @@ header #links a {
   padding: 5px 12px;
   margin-top: 4px;
   background-color: #AAA;
-  color: white;
   font-size: 1.3em;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
   border-radius: 5px;
   cursor: pointer;
-}
-#latestMessageSection #listen,
-#latestMessageSection #download {
   margin-right: 10px;
 }
-#latestMessageSection #slides {
-  margin-right: 15px;
-}
-.left {
-  float: left;
-}
-.right {
-  float: right;
-}
-.cap {
-  text-transform: uppercase;
-}
-.caps {
-  text-transform: uppercase;
+#latestMessageSection .button a {
+  color: white;
+  text-decoration: none;
 }
 .entry-content {
   position: relative;
@@ -1957,6 +1964,29 @@ header #links a {
 .oneHalf {
   width: 48%;
 }
+.boxHolder > .clear > div {
+  float: left;
+  width: 243px;
+  height: 150px;
+  border: 1px solid #CCC;
+  background-color: gray;
+  margin: 10px 5px 0px;
+}
+.boxHolder > .clear > div:nth-child(4n+1) {
+  margin-left: 0px;
+}
+.boxHolder > .clear > div:nth-child(4n) {
+  margin-right: 0px;
+}
+.big {
+  font-size: 3em;
+}
+.bigAndBordered {
+  font-size: 3em;
+  border-top: 2px solid #CCC;
+  padding-top: 15px;
+  margin-top: 25px;
+}
 .site-content {
   margin-bottom: 100px;
   margin-top: 0px;
@@ -1973,60 +2003,61 @@ iframe {
   width: 100%;
   height: 100%;
 }
-#primary #aboutMain {
-  padding: 20px;
-  background-color: #999;
-  min-height: 317px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
+@media (max-width: 1163px) {
+  .boxHolder > .clear > div {
+    width: 49%;
+    margin: 5px;
+  }
+  .boxHolder > .clear > div:nth-child(even) {
+    margin-right: 0px;
+  }
+  .boxHolder > .clear > div:nth-child(odd) {
+    margin-left: 0px;
+  }
 }
-#primary #aboutSermonHolder {
-  width: 60%;
-  height: 328px;
-  margin-right: 20px;
+@media (max-width: 750px) {
+  .boxHolder > .clear > div {
+    width: 48%;
+  }
 }
-#primary #aboutUsDescription {
-  width: 37%;
-  color: #EEE;
-  font-size: 1.3em;
-  line-height: 1.3em;
-  margin-top: 8px;
+@media (max-width: 700px) {
+  .oneHalf {
+    width: 100%;
+  }
+  .boxHolder > .clear > div {
+    width: 100%;
+    margin: 5px 0px;
+  }
+  .site-content {
+    margin-bottom: 20px;
+  }
+  header #englishMinistry {
+    max-width: 100px;
+    margin-top: 22px;
+  }
+  header #links {
+    float: left;
+    margin-bottom: 10px;
+  }
+  header #links li {
+    margin-top: 3px;
+    margin-bottom: 3px;
+  }
 }
-#primary #bios {
-  margin: 20px 0px;
+@media (max-width: 1075px) {
+  header #links {
+    margin-top: 0px;
+  }
 }
-#primary #bios img {
-  width: 100%;
+@media (max-width: 1000px) {
+  header #links {
+    margin-top: 60px;
+  }
 }
-#primary #bios .bigAndBordered {
-  margin-bottom: 20px;
-}
-#primary #bios .bioDescription {
-  line-height: 1.2em;
-}
-#primary .boxHolder > .clear > div {
-  float: left;
-  width: 243px;
-  height: 150px;
-  border: 1px solid #CCC;
-  background-color: gray;
-  margin: 10px 5px 0px;
-}
-#primary .boxHolder > .clear > div:nth-child(4n+1) {
-  margin-left: 0px;
-}
-#primary .boxHolder > .clear > div:nth-child(4n) {
-  margin-right: 0px;
-}
-#primary .big {
-  font-size: 3em;
-}
-#primary .bigAndBordered {
-  font-size: 3em;
-  border-top: 2px solid #CCC;
-  padding-top: 15px;
-  margin-top: 25px;
+@media (max-width: 973px) {
+  header #links {
+    margin-top: 0px;
+  }
 }
 .indexTemplate #resourcesBox {
   background-image: url("img/quicklinks/resources.png");
@@ -2046,14 +2077,58 @@ iframe {
   font-size: 2.5em;
   line-height: 150px;
   background-size: 100%;
-  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px #444;
 }
 .indexTemplate .boxHolder .clear > div > a {
   display: block;
   color: #EEE;
   text-decoration: none;
+}
+.aboutTemplate #aboutMain {
+  padding: 20px;
+  background-color: #999;
+  min-height: 317px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.aboutTemplate #aboutSermonHolder {
+  width: 60%;
+  height: 328px;
+  margin-right: 20px;
+}
+.aboutTemplate #aboutUsDescription {
+  width: 37%;
+  color: #EEE;
+  font-size: 1.3em;
+  line-height: 1.3em;
+  margin-top: 8px;
+}
+.aboutTemplate #bios {
+  margin: 20px 0px;
+}
+.aboutTemplate #bios img {
+  width: 100%;
+}
+.aboutTemplate #bios .bigAndBordered {
+  margin-bottom: 20px;
+}
+.aboutTemplate #bios .bioDescription {
+  line-height: 1.2em;
+}
+@media (max-width: 1000px) {
+  #mainContainer {
+    padding: 0px 25px;
+  }
+  .aboutTemplate #aboutSermonHolder,
+  .aboutTemplate #aboutUsDescription {
+    width: 100%;
+  }
+}
+@media (max-width: 700px) {
+  .aboutTemplate .oneHalf {
+    margin-bottom: 35px;
+  }
 }
 .locationTemplate {
   line-height: 1.4em;
@@ -2115,4 +2190,19 @@ iframe {
 }
 .connectTemplate #exeJesus {
   background-image: url("img/connect/Exejesus.png");
+}
+.csbc-custom h1 {
+  font-size: 3em;
+  text-decoration: none;
+}
+.dateh3 {
+  font-size: 1.5em;
+  line-height: 1.5em;
+}
+.partialWidth {
+  width: 65%;
+}
+.youtubeWrapper {
+  width: 100%;
+  height: 450px;
 }
