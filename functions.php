@@ -466,6 +466,10 @@ function getPosts($type,$number=5) {
 		$cat = 7;
 	else if($type == 'sermon')
 		$cat = 11;
+	else if($type == 'friday night topics')
+		$cat = 19;
+	else if($type == 'sermon series')
+		$cat = 21;
 	else if($type == 'from the pastor')
 		$cat = '7,8';
 
@@ -473,4 +477,9 @@ function getPosts($type,$number=5) {
 		query_posts('posts_per_page=$number');	
 	else
 		query_posts("cat=$cat&posts_per_page=$number");
+}
+
+function getFeaturedPostUrl($postId) {
+	$thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($postId));
+	return $thumbnail[0];
 }

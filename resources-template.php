@@ -16,30 +16,31 @@ get_header(); ?>
 				<h1 class='big caps'>Sermons</h1>
 				<div class='clear'>
 					<?php
-					getPosts('sermon');
+					getPosts('sermon series', 4);
 
 					while (have_posts()) : the_post(); ?>
 
-						<?php $custom_fields = get_post_custom(); if(!$custom_fields['youtube']) continue; ?>
-
 						<div>
-						  	<iframe src="//www.youtube.com/embed/<?php echo $custom_fields['youtube'][0]; ?>" frameborder="0" allowfullscreen></iframe>
+						  	<img src="<?php echo getFeaturedPostUrl(get_the_ID()); ?>"/>
 						</div>
 
 					<?php endwhile; ?>
-					<div></div>
-					<div></div>
-					<div></div>
 				</div>
 			</section>
 
 			<section id='fridayNightTopics' class='boxHolder'>
 				<h1 class='bigAndBordered caps'>Friday Night Topics</h1>
 				<div class='clear'>
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
+					<?php
+					getPosts('friday night topics', 4);
+
+					while (have_posts()) : the_post(); ?>
+
+						<div>
+						  	<img src="<?php echo getFeaturedPostUrl(get_the_ID()); ?>"/>
+						</div>
+
+					<?php endwhile; ?>
 				</div>
 			</section>
 
