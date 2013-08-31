@@ -22,6 +22,7 @@ get_header(); ?>
 
 						<div>
 						  	<img src="<?php echo getFeaturedPostUrl(get_the_ID()); ?>"/>
+						  	<a href='<?php the_permalink() ?>'></a>
 						</div>
 
 					<?php endwhile; ?>
@@ -37,7 +38,8 @@ get_header(); ?>
 					while (have_posts()) : the_post(); ?>
 
 						<div>
-						  	<img src="<?php echo getFeaturedPostUrl(get_the_ID()); ?>"/>
+					  		<img src="<?php echo getFeaturedPostUrl(get_the_ID()); ?>"/>
+						  	<a href='<?php the_permalink() ?>'></a>
 						</div>
 
 					<?php endwhile; ?>

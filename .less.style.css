@@ -1825,60 +1825,6 @@ header #links a {
   text-decoration: none;
   color: black;
 }
-#carousel {
-  height: 400px;
-  position: relative;
-  /*
-  &:before {
-    content: '<';
-    position: absolute;
-    z-index: 2;
-    top: 170px;
-    left: -22px;
-    background-color: white;
-    border: 1px solid #222;
-    padding: 0px 10px;
-    font-size: 2em;
-  }
-  &:after {
-    content: '>';
-    position: absolute;
-    z-index: 2;
-    top: 170px;
-    right: -22px;
-    background-color: white;
-    border: 1px solid #222;
-    padding: 0px 10px;
-    font-size: 2em;
-  }
-  */
-
-}
-#carousel .slide {
-  width: 100%;
-  height: 100%;
-  background-size: 100%;
-  position: absolute;
-  z-index: 100;
-}
-#carousel .slide.active {
-  z-index: 1000;
-}
-#carousel #slide1 {
-  background-image: url("img/carousel/praiseteam.png");
-}
-#carousel #slide2 {
-  background-image: url("img/carousel/praisenightsharing.png");
-}
-#carousel #slide3 {
-  background-image: url("img/carousel/vbs.png");
-}
-#carousel #slide4 {
-  background-image: url("img/carousel/vbs2.png");
-}
-#carousel #slide5 {
-  background-image: url("img/carousel/sundayschool.png");
-}
 #latestMessageSection {
   border-top: 2px solid #DDD;
   border-bottom: 2px solid #DDD;
@@ -1967,16 +1913,31 @@ header #links a {
 .boxHolder > .clear > div {
   float: left;
   width: 243px;
-  height: 150px;
+  min-height: 150px;
   border: 1px solid #CCC;
   background-color: gray;
   margin: 10px 5px 0px;
+  overflow: hidden;
+  position: relative;
 }
 .boxHolder > .clear > div:nth-child(4n+1) {
   margin-left: 0px;
 }
 .boxHolder > .clear > div:nth-child(4n) {
   margin-right: 0px;
+}
+.boxHolder > .clear > div > img {
+  width: 100%;
+  max-width: 100%;
+}
+.boxHolder > .clear > div > a {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+  top: 0;
+  left: 0;
 }
 .big {
   font-size: 3em;

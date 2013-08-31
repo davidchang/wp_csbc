@@ -480,6 +480,6 @@ function getPosts($type,$number=5) {
 }
 
 function getFeaturedPostUrl($postId) {
-	$thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($postId));
+	$thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($postId), 'post-thumbnail');
 	return $thumbnail[0];
 }

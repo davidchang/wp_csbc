@@ -1798,61 +1798,6 @@ header {
 
 
 
-#carousel {
-  height: 400px;
-  position: relative;
-  .slide {
-    .fullDimensions();
-    background-size: 100%;
-    position: absolute;
-    z-index: 100;
-    &.active {
-      z-index: 1000;
-    }
-  }
-  #slide1 {
-    background-image: url("img/carousel/praiseteam.png");
-  }
-  #slide2 {
-    background-image: url("img/carousel/praisenightsharing.png");
-  }
-  #slide3 {
-    background-image: url("img/carousel/vbs.png");
-  }
-  #slide4 {
-    background-image: url("img/carousel/vbs2.png");
-  }
-  #slide5 {
-    background-image: url("img/carousel/sundayschool.png");
-  }
-  /*
-  &:before {
-    content: '<';
-    position: absolute;
-    z-index: 2;
-    top: 170px;
-    left: -22px;
-    background-color: white;
-    border: 1px solid #222;
-    padding: 0px 10px;
-    font-size: 2em;
-  }
-  &:after {
-    content: '>';
-    position: absolute;
-    z-index: 2;
-    top: 170px;
-    right: -22px;
-    background-color: white;
-    border: 1px solid #222;
-    padding: 0px 10px;
-    font-size: 2em;
-  }
-  */
-}
-
-
-
 #latestMessageSection {
   border-top: 2px solid #DDD;
   border-bottom: 2px solid #DDD;
@@ -1949,6 +1894,7 @@ header {
 		background-color: gray;
 		margin: 10px 5px 0px;
 		overflow: hidden;
+		position: relative;
 		&:nth-child(4n+1) {
 			margin-left: 0px;
 		}
@@ -1958,6 +1904,14 @@ header {
 		& > img {
 			width: 100%;
 			max-width: 100%;
+		}
+		& > a {
+			.fullDimensions();
+			position: absolute;
+			z-index: 2;
+			cursor: pointer;
+			top: 0;
+			left: 0;
 		}
 	}
 }
