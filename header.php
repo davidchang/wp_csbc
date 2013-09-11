@@ -38,9 +38,6 @@
   <header class='clear'>
     <div id='logoDiv' class='left'><a href='<?php echo $siteurl; ?>/'></a></div>
     
-    <div id='englishMinistry' class='left'>
-      <a href='<?php echo $siteurl; ?>/'>English Ministry</a>
-    </div>
     <ul id='links' class='right'>
       <li>
         <a href='<?php echo $siteurl; ?>/about-us'>About</a>

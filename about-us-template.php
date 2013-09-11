@@ -13,11 +13,11 @@ get_header(); ?>
 
 	<div id="primary" class="site-content aboutTemplate">
 		<div id="content" role="main">
-			<section id='aboutMain' class='clear'>
-				<div class='left' id='aboutSermonHolder'>
+			<section class='mediaBox'>
+				<div class='media'>
 					<iframe src="//www.youtube.com/embed/e4t7ovZTqR4" frameborder="0" allowfullscreen></iframe>
 				</div>
-				<div class='right' id='aboutUsDescription'>
+				<div class='description'>
 					We are the English Speaking Ministry of Chinese Southern Baptist Church. We believe that Jesus Christ is the way, the truth, and the life; further, we affirm that Jesus died on the cross for the sins of the world and only through believing and surrendering to Him can a person receive salvation. We strive to submit to the authority of the Bible in all our ministries. Our primary goal is to make disciples of Jesus Christ who are passionate for His glory. Our mission is to spread the gospel to all nations. (See <a href='<?php echo $siteurl; ?>/beliefs'>Beliefs</a>)
 				</div>
 			</section>
