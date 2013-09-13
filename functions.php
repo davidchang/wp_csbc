@@ -479,6 +479,13 @@ function getPosts($type,$number=5) {
 		query_posts("cat=$cat&posts_per_page=$number");
 }
 
+function getCategories() {
+	return array(
+		'sermon series' => 21,
+		'friday night topics' => 19
+	);
+}
+
 function getFeaturedPostUrl($postId) {
 	$thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($postId), 'post-thumbnail');
 	return $thumbnail[0];

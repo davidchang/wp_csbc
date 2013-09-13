@@ -2149,6 +2149,7 @@ iframe {
   background-color: white;
   border-bottom: 5px solid #CCC;
   margin-bottom: 20px;
+  padding-bottom: 20px;
 }
 .connectTemplate #connectNav ul {
   list-style: none;
