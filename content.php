@@ -29,23 +29,13 @@
 				<?php endif; // is_single() ?>
 			</div><!-- .entry-header -->
 		<?php else : ?>
-			<section class='mediaBox'>
+			<section class='post mediaBox'>
 				<div class='media'>
 					<img src="<?php echo getFeaturedPostUrl(get_the_ID()); ?>"/>
 				</div>
 				<div class='description'>
-					<header>
-						<div>Marriage Group</div>
-						<div>When: Every Other Tuesday</div>
-						<div>6:30pm - 7:30pm</div>
-						<div>Where: CSBC</div>
-						<div>For more information, please contact</div>
-						<div>Matt Zwitt</div>
-						<div>555-555-5555</div>
-					</header>
-					<section>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
-					</section>
+					<!-- print out the blog post content -->
+					<?php the_content(); ?>
 				</div>
 			</section>
 		<?php endif; ?>

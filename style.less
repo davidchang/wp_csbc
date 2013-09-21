@@ -1913,6 +1913,9 @@ header {
 	min-height: 317px;
 	.rounded(5px);
 	clear: both;
+	&.post {
+		padding-bottom: 33px;
+	}
 	.media {
 		width: 60%;
 		height: 328px;
@@ -2126,7 +2129,7 @@ iframe {
 			position: fixed;
 		}
 	}
-	
+
 	/*
 	#groupsHolder {
 		margin-top: 25px;
@@ -2151,6 +2154,23 @@ iframe {
 		background-size: 100%;
 	}
 	*/
+}
+
+#content {
+	#backToFNT {
+		border-top: 5px solid #CCC;
+		margin-top: 25px;
+		padding-top: 30px;
+
+		a {
+			background-color: #AAA;
+			color: white;
+			text-decoration: none;
+			padding: 5px 13px;
+			font-size: 1.2em;
+			.rounded(7px);
+		}
+	}
 }
 
 .csbc-custom h1 {
