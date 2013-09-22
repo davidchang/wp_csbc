@@ -482,11 +482,16 @@ function getPosts($type,$number=5) {
 function getCategories() {
 	return array(
 		'sermon series' => 21,
-		'friday night topics' => 19
+		'friday night topics' => 19,
+		'sermon' => 11
 	);
 }
 
 function getFeaturedPostUrl($postId) {
 	$thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($postId), 'post-thumbnail');
 	return $thumbnail[0];
+}
+
+function getTitle() {
+	
 }

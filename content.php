@@ -16,7 +16,36 @@
 		</div>
 		<?php endif; ?>
 
-		<?php if(!in_category($categories['friday night topics'], get_the_ID())) : ?>
+		<?php if(in_category($categories['friday night topics'], get_the_ID())) : ?>
+			<section class='post mediaBox'>
+				<div class='media'>
+					<img src="<?php echo getFeaturedPostUrl(get_the_ID()); ?>"/>
+				</div>
+				<div class='description'>
+					<!-- print out the blog post content -->
+					<?php the_content(); ?>
+				</div>
+			</section>
+		<?php elseif(in_category($categories['sermon'], get_the_ID())) : ?>
+			<!-- TODO -->
+			<section class='mediaBox'>
+				<div class='media'>
+					<?php $custom_fields = get_post_custom(); if($custom_fields['youtube']) { ?>
+						<div class='youtubeWrapper'>
+							<iframe src="//www.youtube.com/embed/<?php echo $custom_fields['youtube'][0]; ?>" frameborder="0" allowfullscreen></iframe>
+						</div>
+
+						<div class='soundcloudWrapper'>
+							<iframe scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F<?php echo $custom_fields['soundcloud'][0]; ?>"></iframe>
+						</div>
+					<?php } ?>
+				</div>
+				<div class='description'>
+					<!-- print out the blog post content -->
+					<?php the_content(); ?>
+				</div>
+			</section>
+		<?php else : ?>
 			<div class="csbc-custom entry-header">
 				<?php the_post_thumbnail(); ?>
 				<?php if ( is_single() ) : ?>
@@ -28,19 +57,10 @@
 				</h1>
 				<?php endif; // is_single() ?>
 			</div><!-- .entry-header -->
-		<?php else : ?>
-			<section class='post mediaBox'>
-				<div class='media'>
-					<img src="<?php echo getFeaturedPostUrl(get_the_ID()); ?>"/>
-				</div>
-				<div class='description'>
-					<!-- print out the blog post content -->
-					<?php the_content(); ?>
-				</div>
-			</section>
 		<?php endif; ?>
 
-		<?php $showContent = !in_category($categories['friday night topics'], get_the_ID()); ?>
+		<?php $showContent = !(in_category($categories['friday night topics'], get_the_ID()) ||
+			in_category($categories['sermon'], get_the_ID())); ?>
 
 		<?php if ( is_search() ) { // Only display Excerpts for Search ?>
 		<div class="entry-summary">
@@ -50,6 +70,7 @@
 		<div class="entry-content">
 			<?php $custom_fields = get_post_custom(); if($custom_fields['youtube']) { ?>
 
+<!--
 				<div class='youtubeWrapper'>
 					<iframe src="//www.youtube.com/embed/<?php echo $custom_fields['youtube'][0]; ?>" frameborder="0" allowfullscreen></iframe>
 				</div>
@@ -57,7 +78,7 @@
 				<div class='soundcloudWrapper'>
 					<iframe scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F<?php echo $custom_fields['soundcloud'][0]; ?>"></iframe>
 				</div>
-
+-->
 			<?php } else { ?>
 
 				<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'twentytwelve' ) ); ?>

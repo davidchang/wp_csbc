@@ -1905,8 +1905,8 @@ header #links a {
   float: left;
   width: 243px;
   min-height: 150px;
-  border: 1px solid #CCC;
-  background-color: gray;
+  /* background-color: gray; */
+
   margin: 10px 5px 0px;
   overflow: hidden;
   position: relative;
@@ -1920,6 +1920,8 @@ header #links a {
 .boxHolder > .clear > div > img {
   width: 100%;
   max-width: 100%;
+  /* border: 1px solid #CCC; */
+
 }
 .boxHolder > .clear > div > a {
   width: 100%;
@@ -1929,6 +1931,30 @@ header #links a {
   cursor: pointer;
   top: 0;
   left: 0;
+}
+.boxHolder > .clear > div > div {
+  background-color: white;
+  margin-top: 12px;
+  position: relative;
+  /* temporary fix for how this is done, but keeps text from being able to be selected */
+
+}
+.boxHolder > .clear > div > div .cover {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 5;
+  cursor: default;
+  top: 0;
+  left: 0;
+}
+.boxHolder > .clear > div > div .title {
+  font-size: 1.3em;
+  margin-bottom: 7px;
+}
+.boxHolder > .clear > div > div .date {
+  font-style: italic;
+  margin-bottom: 2px;
 }
 .mediaBox {
   padding: 20px;
@@ -2170,12 +2196,12 @@ iframe {
 .connectTemplate #connectNav.fixed {
   position: fixed;
 }
-#content #backToFNT {
+#content .backContainer {
   border-top: 5px solid #CCC;
   margin-top: 25px;
   padding-top: 30px;
 }
-#content #backToFNT a {
+#content .backContainer > a {
   background-color: #AAA;
   color: white;
   text-decoration: none;
@@ -2184,6 +2210,12 @@ iframe {
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   border-radius: 7px;
+}
+#content .mediaBox {
+  min-height: 550px;
+}
+#content .mediaBox .media {
+  height: auto;
 }
 .csbc-custom h1 {
   font-size: 3em;
@@ -2198,7 +2230,7 @@ iframe {
 }
 .youtubeWrapper {
   width: 100%;
-  height: 450px;
+  height: 400px;
 }
 #calHolder {
   height: 500px;
