@@ -473,10 +473,16 @@ function getPosts($type,$number=5) {
 	else if($type == 'from the pastor')
 		$cat = '7,8';
 
-	if(!$cat)
-		query_posts('posts_per_page=$number');	
-	else
-		query_posts("cat=$cat&posts_per_page=$number");
+	$queryString = '';
+
+	if($cat) {
+		$queryString .= "cat=$cat&";
+	}
+	if($number && $number > -1) {
+		$queryString .= "posts_per_page=$number";
+	}
+
+	query_posts($queryString);
 }
 
 function getCategories() {
@@ -493,5 +499,5 @@ function getFeaturedPostUrl($postId) {
 }
 
 function getTitle() {
-	
+
 }
