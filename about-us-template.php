@@ -13,7 +13,7 @@ get_header(); ?>
 
 	<div id="primary" class="site-content aboutTemplate">
 		<div id="content" role="main">
-			<section class='mediaBox'>
+			<section class='mediaBox clear'>
 				<div class='media'>
 					<iframe src="//www.youtube.com/embed/e4t7ovZTqR4" frameborder="0" allowfullscreen></iframe>
 				</div>
@@ -48,7 +48,7 @@ get_header(); ?>
 			</section>
 
 			<section class='boxHolder'>
-				<h1 class='bigAndBordered'>Get to Know Us</h1>
+				<h1 class='bigAndBordered'>Video Testimonies</h1>
 				<div class='clear'>
 					<div></div>
 					<div></div>

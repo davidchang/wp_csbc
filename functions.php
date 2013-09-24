@@ -489,10 +489,11 @@ function getPosts($type,$number=5) {
 }
 
 function getCategories() {
+	$is_devo = true;
 	return array(
-		'sermon series' => 21,
-		'friday night topics' => 19,
-		'sermon' => 11
+		'sermon series' => $is_devo ? 21 : 22,
+		'friday night topics' => $is_devo ? 19 : 20,
+		'sermon' => $is_devo ? 11 : 24
 	);
 }
 
@@ -503,4 +504,16 @@ function getFeaturedPostUrl($postId) {
 
 function getRootURL() {
 	return get_option("siteurl");
+}
+
+function getPostBox($postId='', $timeFormat='F j, Y') {
+	if(!strlen($postId)) {
+		$postId = get_the_ID();
+	}
+	$img = getFeaturedPostUrl($postId);
+	$url = get_permalink($postId);
+	$title = get_the_title($postId);
+	$time = get_the_time($timeFormat, $postId);
+
+	return "<div><img src='$img'/><a href='$url'></a><div><div class='cover'></div><div class='title'>$title</div><div class='date'>$time</div></div></div>";
 }

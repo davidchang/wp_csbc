@@ -24,7 +24,7 @@ get_header(); ?>
 						<?php get_template_part( 'content', get_post_format() ); ?>
 
 						<div class='backContainer'>
-							<a href='<?php echo getRootURL(); ?>/sermons'>Back to Friday Night Topics</a>
+							<a href='<?php echo getRootURL(); ?>/friday-night-topics'>Back to Friday Night Topics</a>
 						</div>
 
 					<?php elseif(in_category($categories['sermon series'], get_the_ID())) : ?>
@@ -34,57 +34,54 @@ get_header(); ?>
 							<div class='clear'>
 								<?php $custom_fields = get_post_custom(); if(!empty($custom_fields['sermon_ids'])) {
 									foreach(explode(',', $custom_fields['sermon_ids'][0]) as $cur) {
-								?>
-									<div>
-										<img src="<?php echo getFeaturedPostUrl($cur); ?>"/>
-										<a href='<?php echo get_permalink($cur); ?>'></a>
-										<div>
-											<div class='cover'></div>
-
-											<div class='title'>
-												<?php echo get_the_title($cur); ?>
-											</div>
-											<div class='date'>
-												<?php echo get_the_time('F j, Y', $cur); ?>
-											</div>
-										</div>
-									</div>
-								<?php }
+										echo getPostBox($cur);
+									}
 								}
 								?>
 							</div>
 						</section>
 
 						<div class='backContainer'>
-							<a href='<?php echo getRootURL(); ?>/resources'>Back to Sermon Series</a>
+							<a href='<?php echo getRootURL(); ?>/sermons'>Back to Sermons</a>
 						</div>
 						
 					<?php elseif(in_category($categories['sermon'], get_the_ID())) : ?>
 						<!-- sunday sermon content -->
 						<?php get_template_part( 'content', get_post_format() ); ?>
 
-						<div class='backContainer'>
+						<div class='moreContainer'>
 							<section class='boxHolder'>
-								<h1 class='big caps'>More from this Series</h1>
+								<?php
+									$series_id = get_post_custom()['series_id'][0];
+									$use_the_series = get_the_title($series_id) !== 'Stand-Alone Sermons';
+								?>
+								<h1 class='big caps'><?php if($use_the_series) {
+									echo "More From This Series";
+								} else {
+									echo "Most Recent Sermons";
+								} ?></h1>
 								<div class='clear'>
-									<?php $custom_fields = get_post_custom(get_post_custom()['series_id'][0]); if(!empty($custom_fields['sermon_ids'])) {
-										foreach(explode(',', $custom_fields['sermon_ids'][0]) as $cur) {
-									?>
-										<div>
-											<img src="<?php echo getFeaturedPostUrl($cur); ?>"/>
-											<a href='<?php echo get_permalink($cur); ?>'></a>
-											<div>
-												<div class='cover'></div>
 
-												<div class='title'>
-													<?php echo get_the_title($cur); ?>
-												</div>
-												<div class='date'>
-													<?php echo get_the_time('F j, Y', $cur); ?>
-												</div>
-											</div>
-										</div>
-									<?php }
+									<?php
+
+									if($use_the_series) {
+
+										//get the custom fields for the series
+										$custom_fields = get_post_custom($series_id);
+										if(!empty($custom_fields['sermon_ids'])) {
+											$sermon_ids = $custom_fields['sermon_ids'][0];
+											//reverse sort so that most recent shows up
+
+											foreach(explode(',', $sermon_ids) as $cur) {
+												if($cur == get_the_ID())
+													continue;
+
+												echo getPostBox($cur);
+											}
+										}
+									}
+									else {
+										//you'll want to show the most recent 4 sermons regardless
 									}
 									?>
 								</div>
@@ -92,7 +89,11 @@ get_header(); ?>
 						</div>
 
 						<div class='backContainer'>
-							<a href='<?php echo getRootURL(); ?>/sermons'>Back to Sermon Series</a>
+							<?php if($use_the_series) { ?>
+								<a href='<?php echo get_permalink($series_id); ?>'>Back to Sermon Series</a>
+							<?php } else { ?>
+								<a href='<?php echo getRootURL(); ?>/sermons'>Back to Sermons</a>
+							<?php } ?>
 						</div>
 
 					<?php else : ?>

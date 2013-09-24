@@ -16,7 +16,7 @@ get_header(); ?>
 				<h1 class='big caps'>Sermons</h1>
 				<div class='clear'>
 					<?php
-					getPosts('sermon series', -1);
+					getPosts('sermon', -1);
 
 					while (have_posts()) : the_post(); ?>
 

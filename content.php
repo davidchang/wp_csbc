@@ -17,7 +17,7 @@
 		<?php endif; ?>
 
 		<?php if(in_category($categories['friday night topics'], get_the_ID())) : ?>
-			<section class='post mediaBox'>
+			<section class='post mediaBox clear'>
 				<div class='media'>
 					<img src="<?php echo getFeaturedPostUrl(get_the_ID()); ?>"/>
 				</div>
@@ -28,7 +28,7 @@
 			</section>
 		<?php elseif(in_category($categories['sermon'], get_the_ID())) : ?>
 			<!-- TODO -->
-			<section class='mediaBox'>
+			<section class='mediaBox clear'>
 				<div class='media'>
 					<?php $custom_fields = get_post_custom(); if($custom_fields['youtube']) { ?>
 						<div class='youtubeWrapper'>
