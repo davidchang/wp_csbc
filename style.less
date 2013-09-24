@@ -1747,10 +1747,10 @@ body {
   background-color: #EEE;
 }
 #mainContainer {
-  max-width: 1012px;
+  max-width: 960px;
   margin: 0 auto;
   background-color: white;
-  padding: 0px 75px;
+  padding: 0px 75px 70px;
   border-right: 1px solid #CCC;
   border-left: 1px solid #CCC;
 }
@@ -1879,7 +1879,7 @@ header {
 .boxHolder {
 	& > .clear > div {
 		.left;
-		width: 243px;
+		width: 232px;
 		min-height: 150px;
 		/* background-color: gray; */
 		margin: 10px 5px 0px;
@@ -2099,6 +2099,9 @@ iframe {
 	}
 	h3 {
 		margin: 20px 0px 0px;
+		&:first-child {
+			margin-top: 0px;
+		}
 	}
 	h1 {
 		font-weight: normal;
@@ -2129,6 +2132,7 @@ iframe {
 .connectTemplate {
 	.mediaBox {
 		margin: 30px 0px;
+		min-height: 310px;
 	}
 	#connectNav {
 		text-transform: uppercase;
@@ -2194,12 +2198,12 @@ iframe {
 			.rounded(7px);
 		}
 	}
+}
 
-	.mediaBox {
-		min-height: 550px;
-		.media {
-			height: auto;
-		}
+.mediaBox {
+	min-height: 550px;
+	.media {
+		height: auto;
 	}
 }
 
@@ -2220,4 +2224,7 @@ iframe {
 }
 #calHolder {
 	height: 500px;
+}
+.marginTop {
+	margin-top: 10px;
 }

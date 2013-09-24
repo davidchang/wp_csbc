@@ -1778,10 +1778,10 @@ body {
   background-color: #EEE;
 }
 #mainContainer {
-  max-width: 1012px;
+  max-width: 960px;
   margin: 0 auto;
   background-color: white;
-  padding: 0px 75px;
+  padding: 0px 75px 70px;
   border-right: 1px solid #CCC;
   border-left: 1px solid #CCC;
 }
@@ -1903,7 +1903,7 @@ header #links a {
 }
 .boxHolder > .clear > div {
   float: left;
-  width: 243px;
+  width: 232px;
   min-height: 150px;
   /* background-color: gray; */
 
@@ -2118,6 +2118,9 @@ iframe {
 .locationTemplate h3 {
   margin: 20px 0px 0px;
 }
+.locationTemplate h3:first-child {
+  margin-top: 0px;
+}
 .locationTemplate h1 {
   font-weight: normal;
   font-size: 1.8em;
@@ -2172,6 +2175,7 @@ iframe {
 }
 .connectTemplate .mediaBox {
   margin: 30px 0px;
+  min-height: 310px;
 }
 .connectTemplate #connectNav {
   text-transform: uppercase;
@@ -2211,10 +2215,10 @@ iframe {
   -moz-border-radius: 7px;
   border-radius: 7px;
 }
-#content .mediaBox {
+.mediaBox {
   min-height: 550px;
 }
-#content .mediaBox .media {
+.mediaBox .media {
   height: auto;
 }
 .csbc-custom h1 {
@@ -2234,4 +2238,7 @@ iframe {
 }
 #calHolder {
   height: 500px;
+}
+.marginTop {
+  margin-top: 10px;
 }

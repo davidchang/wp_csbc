@@ -47,13 +47,13 @@ get_header(); ?>
      </section>
 
      <?php endwhile; ?>
-
+     
      <section class='boxHolder'>
         <div class='clear'>
-          <div id='resourcesBox'><a href='<?php echo $siteurl; ?>/resources'>Resources</a></div>
-          <div id='eventsBox'><a href='<?php echo $siteurl; ?>/events'>News & Events</a></div>
-          <div id='locationBox'><a href='<?php echo $siteurl; ?>/visit'>Location</a></div>
-          <div id='contactBox'><a href='<?php echo $siteurl; ?>/connect'>Contact</a></div>
+          <div id='resourcesBox'><a href='<?php echo getRootURL(); ?>/resources'>Resources</a></div>
+          <div id='eventsBox'><a href='<?php echo getRootURL(); ?>/events'>News & Events</a></div>
+          <div id='locationBox'><a href='<?php echo getRootURL(); ?>/visit'>Location</a></div>
+          <div id='contactBox'><a href='<?php echo getRootURL(); ?>/connect'>Contact</a></div>
         </div>
       </section>
 

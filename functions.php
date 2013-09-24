@@ -460,16 +460,19 @@ function custom_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 function getPosts($type,$number=5) {
+
+	$is_devo = true;
+
 	if($type == 'midweek')
 		$cat = 8;
 	else if($type == 'mini message')
 		$cat = 7;
 	else if($type == 'sermon')
-		$cat = 11;
+		$cat = $is_devo ? 11 : 24;
 	else if($type == 'friday night topics')
-		$cat = 19;
+		$cat = $is_devo ? 19 : 20;
 	else if($type == 'sermon series')
-		$cat = 21;
+		$cat = $is_devo ? 21 : 22;
 	else if($type == 'from the pastor')
 		$cat = '7,8';
 
@@ -498,6 +501,6 @@ function getFeaturedPostUrl($postId) {
 	return $thumbnail[0];
 }
 
-function getTitle() {
-
+function getRootURL() {
+	return get_option("siteurl");
 }

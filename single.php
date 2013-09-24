@@ -24,7 +24,7 @@ get_header(); ?>
 						<?php get_template_part( 'content', get_post_format() ); ?>
 
 						<div class='backContainer'>
-							<a href='<?php echo $siteurl; ?>/sermons'>Back to Friday Night Topics</a>
+							<a href='<?php echo getRootURL(); ?>/sermons'>Back to Friday Night Topics</a>
 						</div>
 
 					<?php elseif(in_category($categories['sermon series'], get_the_ID())) : ?>
@@ -56,7 +56,7 @@ get_header(); ?>
 						</section>
 
 						<div class='backContainer'>
-							<a href='<?php echo $siteurl; ?>/resources'>Back to Sermon Series</a>
+							<a href='<?php echo getRootURL(); ?>/resources'>Back to Sermon Series</a>
 						</div>
 						
 					<?php elseif(in_category($categories['sermon'], get_the_ID())) : ?>
@@ -92,7 +92,7 @@ get_header(); ?>
 						</div>
 
 						<div class='backContainer'>
-							<a href='<?php echo $siteurl; ?>/sermons'>Back to Sermon Series</a>
+							<a href='<?php echo getRootURL(); ?>/sermons'>Back to Sermon Series</a>
 						</div>
 
 					<?php else : ?>
@@ -109,7 +109,7 @@ get_header(); ?>
 
 			<?php endwhile; // end of the loop. ?>
 
-			<?php get_sidebar(); ?>
+			<!-- <?php get_sidebar(); ?> -->
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
