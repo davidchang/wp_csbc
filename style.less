@@ -2127,14 +2127,12 @@ iframe {
 }
 .connectTemplate {
 	.mediaBox {
-		margin: 30px 0px;
 		min-height: 310px;
 	}
 	#connectNav {
 		text-transform: uppercase;
 		background-color: white;
 		border-bottom: 5px solid #CCC;
-		margin-bottom: 20px;
 		padding-bottom: 20px;
 		ul {
 			list-style: none;
@@ -2152,32 +2150,23 @@ iframe {
 		&.fixed {
 			position: fixed;
 		}
+
+		&.stick {
+			position: fixed;
+		  top: 0;
+		  z-index: 10000;
+
+		  border-top: 5px solid #CCC;
+		  padding-top: 20px;
+		}
 	}
 
-	/*
-	#groupsHolder {
-		margin-top: 25px;
-
-		#marriageGroup {
-			background-image: url("img/connect/MarriageGroup.png");
-		}
-		#girlsGroup {
-			background-image: url("img/connect/GirlsGroup.png");
-		}
-		#guysGroup {
-			background-image: url("img/connect/GuysGroup.png");
-		}
-		#prayerGroup {
-			background-image: url("img/connect/PrayerGroup.png");
-		}
-		#exeJesus {
-			background-image: url("img/connect/Exejesus.png");
+	.groupAnchor {
+		height: 60px;
+		&#girlsGroup {
+			height: 50px;
 		}
 	}
-	.boxHolder .clear > div {
-		background-size: 100%;
-	}
-	*/
 }
 
 .customBtn {
@@ -2213,8 +2202,10 @@ iframe {
 	}
 }
 
-.aboutTemplate .mediaBox .media {
-	height: 328px;
+.aboutTemplate, .connectTemplate {
+	.mediaBox .media {
+		height: 328px;
+	}
 }
 
 .mediaBox {

@@ -12,6 +12,7 @@ get_header(); ?>
 	<div id="primary" class="site-content connectTemplate">
 		<div id="content" role="main" class='pageSection clear'>
 
+			<div id='stickyAnchor'></div>
 			<section id='connectNav' class='clear'>
 				<ul>
 					<li><a href='#girlsGroup'>Girls Group</a></li>
@@ -22,9 +23,10 @@ get_header(); ?>
 				</ul>
 			</section>
 
-			<section id='girlsGroup' class='mediaBox'>
+			<div class='groupAnchor' id='girlsGroup'></div>
+			<section class='mediaBox clear'>
 				<div class='media'>
-					<img src="/wordpress/wp-content/uploads/2013/09/GirlsGroup_920x500.png"/>
+					<img src="/wordpress/wp-content/uploads/2013/09/GirlsGroup_640x480.png"/>
 				</div>
 				<div class='description'>
 					<header>
@@ -42,9 +44,10 @@ get_header(); ?>
 				</div>
 			</section>
 
-			<section id='guysGroup' class='mediaBox'>
+			<div class='groupAnchor' id='guysGroup'></div>
+			<section class='mediaBox clear'>
 				<div class='media'>
-					<img src="/wordpress/wp-content/uploads/2013/09/GuysGroup_920x500.png"/>
+					<img src="/wordpress/wp-content/uploads/2013/09/GuysGroup_640x480.png"/>
 				</div>
 				<div class='description'>
 					<header>
@@ -62,9 +65,10 @@ get_header(); ?>
 				</div>
 			</section>
 
-			<section id='prayerGroup' class='mediaBox'>
+			<div class='groupAnchor' id='prayerGroup'></div>
+			<section class='mediaBox clear'>
 				<div class='media'>
-					<img src="/wordpress/wp-content/uploads/2013/09/PrayerGroup_920x500.png"/>
+					<img src="/wordpress/wp-content/uploads/2013/09/PrayerGroup_640x480.png"/>
 				</div>
 				<div class='description'>
 					<header>
@@ -82,9 +86,10 @@ get_header(); ?>
 				</div>
 			</section>
 
-			<section id='marriageGroup' class='mediaBox'>
+			<div class='groupAnchor' id='marriageGroup'></div>
+			<section class='mediaBox clear'>
 				<div class='media'>
-					<img src="/wordpress/wp-content/uploads/2013/09/PrayerGroup_920x500.png"/>
+					<img src="/wordpress/wp-content/uploads/2013/09/MarriageGroup_640x480.png"/>
 				</div>
 				<div class='description'>
 					<header>
@@ -102,9 +107,10 @@ get_header(); ?>
 				</div>
 			</section>
 
-			<section id='exeJesus' class='mediaBox'>
+			<div class='groupAnchor' id='exeJesus'></div>
+			<section class='mediaBox clear'>
 				<div class='media'>
-					<img src="/wordpress/wp-content/uploads/2013/09/PrayerGroup_920x500.png"/>
+					<img src="/wordpress/wp-content/uploads/2013/09/Exejesus_640x480.png"/>
 				</div>
 				<div class='description'>
 					<header>
@@ -122,18 +128,28 @@ get_header(); ?>
 				</div>
 			</section>
 
-			<!--
-			<section id='groupsHolder' class='boxHolder'>
-				<div class='clear'>
-					<div id='marriageGroup'></div>
-					<div id='girlsGroup'></div>
-					<div id='guysGroup'></div>
-					<div id='prayerGroup'></div>
-					<div id='exeJesus'></div>
-				</div>
-			</section>
-			-->
 		</div><!-- #content -->
 	</div><!-- #primary -->
+
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+	<script>
+		function sticky_relocate() {
+		  var window_top = $(window).scrollTop();
+		  var div_top = $('#stickyAnchor').offset().top - 28;
+		  if (window_top > div_top) {
+		    $('#connectNav').addClass('stick').css('width', $('#content').width());
+		    $('#stickyAnchor').css('height', $('#connectNav').height() + 20);
+		  } else {
+		    $('#connectNav').removeClass('stick');
+		    $('#stickyAnchor').css('height', 0);
+		  }
+		}
+
+		$(function() {
+		  $(window).scroll(sticky_relocate);
+		  sticky_relocate();
+		});
+	</script>	
 
 <?php get_footer(); ?>

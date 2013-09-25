@@ -2142,42 +2142,13 @@ iframe {
   font-size: 1.2em;
   background-color: #CCC;
 }
-.connectTemplate {
-  /*
-	#groupsHolder {
-		margin-top: 25px;
-
-		#marriageGroup {
-			background-image: url("img/connect/MarriageGroup.png");
-		}
-		#girlsGroup {
-			background-image: url("img/connect/GirlsGroup.png");
-		}
-		#guysGroup {
-			background-image: url("img/connect/GuysGroup.png");
-		}
-		#prayerGroup {
-			background-image: url("img/connect/PrayerGroup.png");
-		}
-		#exeJesus {
-			background-image: url("img/connect/Exejesus.png");
-		}
-	}
-	.boxHolder .clear > div {
-		background-size: 100%;
-	}
-	*/
-
-}
 .connectTemplate .mediaBox {
-  margin: 30px 0px;
   min-height: 310px;
 }
 .connectTemplate #connectNav {
   text-transform: uppercase;
   background-color: white;
   border-bottom: 5px solid #CCC;
-  margin-bottom: 20px;
   padding-bottom: 20px;
 }
 .connectTemplate #connectNav ul {
@@ -2195,6 +2166,19 @@ iframe {
 }
 .connectTemplate #connectNav.fixed {
   position: fixed;
+}
+.connectTemplate #connectNav.stick {
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  border-top: 5px solid #CCC;
+  padding-top: 20px;
+}
+.connectTemplate .groupAnchor {
+  height: 60px;
+}
+.connectTemplate .groupAnchor#girlsGroup {
+  height: 50px;
 }
 .customBtn {
   background-color: #AAA;
@@ -2229,7 +2213,8 @@ iframe {
   margin-top: 25px;
   padding-top: 5px;
 }
-.aboutTemplate .mediaBox .media {
+.aboutTemplate .mediaBox .media,
+.connectTemplate .mediaBox .media {
   height: 328px;
 }
 .mediaBox .media {

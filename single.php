@@ -72,9 +72,16 @@ get_header(); ?>
 											$sermon_ids = $custom_fields['sermon_ids'][0];
 											//reverse sort so that most recent shows up
 
-											foreach(explode(',', $sermon_ids) as $cur) {
+											$reverse_ids = array_reverse(explode(',', $sermon_ids));
+											$counter = 0;
+
+											foreach($reverse_ids as $cur) {
 												if($cur == get_the_ID())
 													continue;
+
+												$counter++;
+												if($counter > 4)
+													break;
 
 												echo getPostBox($cur);
 											}
@@ -82,6 +89,18 @@ get_header(); ?>
 									}
 									else {
 										//you'll want to show the most recent 4 sermons regardless
+
+										$sermons = getPosts('sermon', 5, true);
+										$counter = 0;
+										foreach($sermons as $cur) {
+											if($cur->ID == get_the_ID())
+												continue;
+											$counter++;
+											if($counter > 4)
+												break;
+
+											echo getPostBox($cur->ID);
+										}
 									}
 									?>
 								</div>

@@ -459,7 +459,7 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
-function getPosts($type,$number=5) {
+function getPosts($type,$number=5,$noLoop = false) {
 
 	$is_devo = true;
 
@@ -475,6 +475,8 @@ function getPosts($type,$number=5) {
 		$cat = $is_devo ? 21 : 22;
 	else if($type == 'from the pastor')
 		$cat = '7,8';
+	else if($type == 'video testimonies')
+		$cat = $is_devo ? 23 : 36;
 
 	$queryString = '';
 
@@ -485,7 +487,16 @@ function getPosts($type,$number=5) {
 		$queryString .= "posts_per_page=$number";
 	}
 
-	query_posts($queryString);
+	if(!$noLoop) {
+		query_posts($queryString);
+	} else {
+		return get_posts(
+			array(
+				'posts_per_page' => $number,
+				'category' => $cat
+			)
+		);		
+	}
 }
 
 function getCategories() {

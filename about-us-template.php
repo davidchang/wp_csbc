@@ -26,7 +26,7 @@ get_header(); ?>
 				<h1 class='bigAndBordered'>Pastors</h1>
 				<section class='oneHalf left'>
 					<div>
-						<img src="/wordpress/wp-content/themes/csbc-custom/img/about/zwitts.png" alt="">
+						<img src="/wordpress/wp-content/uploads/2013/09/About-MattZwitt_920x400.png" alt="Matt Zwitt">
 					</div>
 					<h1>Matthew Zwitt</h1>
 					<h2>LEAD TEACHING PASTOR</h2>
@@ -37,7 +37,7 @@ get_header(); ?>
 
 				<section class='oneHalf right'>
 					<div>
-						<img src="/wordpress/wp-content/themes/csbc-custom/img/about/zwitts.png" alt="">
+						<img src="/wordpress/wp-content/uploads/2013/09/About-TimShephard_920x400.png" alt="Tim Shepard">
 					</div>
 					<h1>Matthew Zwitt</h1>
 					<h2>LEAD TEACHING PASTOR</h2>
@@ -50,10 +50,12 @@ get_header(); ?>
 			<section class='boxHolder'>
 				<h1 class='bigAndBordered'>Video Testimonies</h1>
 				<div class='clear'>
-					<div></div>
-					<div></div>
-					<div></div>
-					<div></div>
+					<?php
+					getPosts('video testimonies', 4);
+
+					while (have_posts()) : the_post();
+						echo getPostBox();
+					endwhile; ?>
 				</div>
 			</section>
 		</div><!-- #content -->

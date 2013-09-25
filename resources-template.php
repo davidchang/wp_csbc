@@ -44,7 +44,7 @@ get_header(); ?>
 				</div>
 			</section>
 
-			
+			<!--
 			<section class='boxHolder'>
 				<h1 class='bigAndBordered caps'>Blog</h1>
 				<div class='clear'>
@@ -63,11 +63,13 @@ get_header(); ?>
 							</div>
 						</div>
 					-->
+			<!--
 					<?php echo getPostBox(); ?>
 
 					<?php endwhile; ?>
 				</div>
 			</section>
+			-->
 
 		</div><!-- #content -->
 	</div><!-- #primary -->
