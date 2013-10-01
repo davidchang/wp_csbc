@@ -1929,6 +1929,9 @@ header {
 			}
 		}
 	}
+	h1 {
+		margin-bottom: 10px;
+	}
 }
 
 .mediaBox {
@@ -1938,11 +1941,15 @@ header {
 	clear: both;
 	.media {
 		width: 60%;
-		height: 328px;
+		height: auto;
+		&.youtubeVideo {
+			height: 328px;
+		}
 		margin-right: 20px;
 		float: left;
 		img {
-			.fullDimensions();
+			width: 100%;
+			height: auto;
 		}
 	}
 	.description {
@@ -2126,9 +2133,6 @@ iframe {
 	}
 }
 .connectTemplate {
-	.mediaBox {
-		min-height: 310px;
-	}
 	#connectNav {
 		text-transform: uppercase;
 		background-color: white;
@@ -2194,23 +2198,15 @@ iframe {
 			font-size: 1.2em;
 			.rounded(7px);
 		}
+		&.faint {
+			border-top: 2px solid #CCC;
+			padding-top: 20px;
+		}
 	}
 	.moreContainer {
 		border-top: 5px solid #CCC;
 		margin-top: 25px;
 		padding-top: 5px;
-	}
-}
-
-.aboutTemplate, .connectTemplate {
-	.mediaBox .media {
-		height: 328px;
-	}
-}
-
-.mediaBox {
-	.media {
-		height: auto;
 	}
 }
 

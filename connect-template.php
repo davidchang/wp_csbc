@@ -26,7 +26,7 @@ get_header(); ?>
 			<div class='groupAnchor' id='girlsGroup'></div>
 			<section class='mediaBox clear'>
 				<div class='media'>
-					<img src="/wordpress/wp-content/uploads/2013/09/GirlsGroup_640x480.png"/>
+					<img src="/english/wp-content/uploads/2013/10/GirlsGroup_600x326.png"/>
 				</div>
 				<div class='description'>
 					<header>
@@ -36,10 +36,10 @@ get_header(); ?>
 						<div>Where: TBD</div>
 						<div>For more information, please contact</div>
 						<div>Suzi Chang</div>
-						<div>555-555-5555</div>
+						<div></div>
 					</header>
 					<section>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+						Current Book Study: <i>Breaking Free</i> by Beth Moore
 					</section>
 				</div>
 			</section>
@@ -47,7 +47,7 @@ get_header(); ?>
 			<div class='groupAnchor' id='guysGroup'></div>
 			<section class='mediaBox clear'>
 				<div class='media'>
-					<img src="/wordpress/wp-content/uploads/2013/09/GuysGroup_640x480.png"/>
+					<img src="/english/wp-content/uploads/2013/10/GuysGroup_600x326.png"/>
 				</div>
 				<div class='description'>
 					<header>
@@ -57,10 +57,11 @@ get_header(); ?>
 						<div>Where: TBD</div>
 						<div>For more information, please contact</div>
 						<div>Matt Zwitt</div>
-						<div>555-555-5555</div>
+						<div>pastormatt@csbcseattle.org</div>
+						<div>251-421-4157</div>
 					</header>
 					<section>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+						Current Book Study: <i>When I Don’t Desire God</i> by John Piper
 					</section>
 				</div>
 			</section>
@@ -68,20 +69,21 @@ get_header(); ?>
 			<div class='groupAnchor' id='prayerGroup'></div>
 			<section class='mediaBox clear'>
 				<div class='media'>
-					<img src="/wordpress/wp-content/uploads/2013/09/PrayerGroup_640x480.png"/>
+					<img src="/english/wp-content/uploads/2013/10/PrayerGroup_600x326.png"/>
 				</div>
 				<div class='description'>
 					<header>
 						<div>Prayer Group</div>
-						<div>When: Every Other Tuesday</div>
+						<div>When: Every Other Monday</div>
 						<div>6:30pm - 7:30pm</div>
 						<div>Where: CSBC</div>
 						<div>For more information, please contact</div>
 						<div>Matt Zwitt</div>
-						<div>555-555-5555</div>
+						<div>pastormatt@csbcseattle.org</div>
+						<div>251-421-4157</div>
 					</header>
 					<section>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+						Intentional Corporate Prayer
 					</section>
 				</div>
 			</section>
@@ -89,20 +91,21 @@ get_header(); ?>
 			<div class='groupAnchor' id='marriageGroup'></div>
 			<section class='mediaBox clear'>
 				<div class='media'>
-					<img src="/wordpress/wp-content/uploads/2013/09/MarriageGroup_640x480.png"/>
+					<img src="/english/wp-content/uploads/2013/10/MarriageGroup_600x326.png"/>
 				</div>
 				<div class='description'>
 					<header>
 						<div>Marriage Group</div>
-						<div>When: Every Other Tuesday</div>
+						<div>When: Every Other Monday</div>
 						<div>6:30pm - 7:30pm</div>
 						<div>Where: CSBC</div>
 						<div>For more information, please contact</div>
 						<div>Matt Zwitt</div>
-						<div>555-555-5555</div>
+						<div>pastormatt@csbcseattle.org</div>
+						<div>251-421-4157</div>
 					</header>
 					<section>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+						Current Book Study: <i>Hole in our Holiness</i> by Kevin DeYoung
 					</section>
 				</div>
 			</section>
@@ -110,20 +113,21 @@ get_header(); ?>
 			<div class='groupAnchor' id='exeJesus'></div>
 			<section class='mediaBox clear'>
 				<div class='media'>
-					<img src="/wordpress/wp-content/uploads/2013/09/Exejesus_640x480.png"/>
+					<img src="/english/wp-content/uploads/2013/10/Exejesus_600x326.png"/>
 				</div>
 				<div class='description'>
 					<header>
 						<div>exeJesus</div>
-						<div>When: Every Other Tuesday</div>
+						<div>When: Monthly on Thursdays</div>
 						<div>6:30pm - 7:30pm</div>
-						<div>Where: CSBC</div>
+						<div>Where: Pastor Matt's Home</div>
 						<div>For more information, please contact</div>
 						<div>Matt Zwitt</div>
-						<div>555-555-5555</div>
+						<div>pastormatt@csbcseattle.org</div>
+						<div>251-421-4157</div>
 					</header>
 					<section>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+						In-depth study of Ephesians
 					</section>
 				</div>
 			</section>

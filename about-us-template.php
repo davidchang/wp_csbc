@@ -14,7 +14,7 @@ get_header(); ?>
 	<div id="primary" class="site-content aboutTemplate">
 		<div id="content" role="main">
 			<section class='mediaBox clear'>
-				<div class='media'>
+				<div class='media youtubeVideo'>
 					<iframe src="//www.youtube.com/embed/e4t7ovZTqR4" frameborder="0" allowfullscreen></iframe>
 				</div>
 				<div class='description'>
@@ -26,7 +26,7 @@ get_header(); ?>
 				<h1 class='bigAndBordered'>Pastors</h1>
 				<section class='oneHalf left'>
 					<div>
-						<img src="/wordpress/wp-content/uploads/2013/09/About-MattZwitt_920x400.png" alt="Matt Zwitt">
+						<img src="/<?php echo get_url_prefix(); ?>/wp-content/uploads/2013/09/About-MattZwitt_920x400.png" alt="Matt Zwitt">
 					</div>
 					<h1>Matthew Zwitt</h1>
 					<h2>LEAD TEACHING PASTOR</h2>
@@ -37,7 +37,7 @@ get_header(); ?>
 
 				<section class='oneHalf right'>
 					<div>
-						<img src="/wordpress/wp-content/uploads/2013/09/About-TimShephard_920x400.png" alt="Tim Shepard">
+						<img src="/<?php echo get_url_prefix(); ?>/wp-content/uploads/2013/09/About-TimShephard_920x400.png" alt="Tim Shepard">
 					</div>
 					<h1>Matthew Zwitt</h1>
 					<h2>LEAD TEACHING PASTOR</h2>
@@ -54,7 +54,11 @@ get_header(); ?>
 					getPosts('video testimonies', 4);
 
 					while (have_posts()) : the_post();
-						echo getPostBox();
+						$custom_fields = get_post_custom();
+						echo getPostBox('', 'F j, Y', array(
+							'url' => 'http://www.youtube.com/watch?v='.$custom_fields['youtube'][0],
+							'new_page' => true
+						));
 					endwhile; ?>
 				</div>
 			</section>
