@@ -36,6 +36,7 @@ get_header(); ?>
 						<div>Where: TBD</div>
 						<div>For more information, please contact</div>
 						<div>Suzi Chang</div>
+						<div>girlsgroup@csbcseattle.org</div>
 						<div></div>
 					</header>
 					<section>
