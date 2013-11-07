@@ -532,9 +532,13 @@ function getPostBox($postId='', $timeFormat='F j, Y', $options=array()) {
 		$new_page = 'target="_blank"';
 	}
 
-	return "<div><img src='$img'/><a $new_page href='$url'></a><div><div class='cover'></div><div class='title'>$title</div><div class='date'>$time</div></div></div>";
+	return "<div class='col-sm-6 col-md-3 col-lg-3'><div><img src='$img'/><a $new_page href='$url'></a><div><div class='cover'></div><div class='title'>$title</div><div class='date'>$time</div></div></div></div>";
 }
 function get_url_prefix() {
 	$is_devo = true;
 	return $is_devo ? 'wordpress' : 'english';
+}
+
+function getPostBoxSection($title, $category, $url) {
+	
 }
