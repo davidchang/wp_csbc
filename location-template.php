@@ -22,6 +22,7 @@ get_header(); ?>
 				<div>925 S King St, Seattle, WA 98104
 					<a href='https://maps.google.com/maps?ie=UTF8&amp;q=chinese+southern+baptist+church&amp;fb=1&amp;gl=us&amp;hq=chinese+southern+baptist+church&amp;hnear=0x54900cad2000ee23:0x5e0390eac5d804f2,Redmond,+WA&amp;cid=0,0,1748769979544881284&amp;ll=47.598255,-122.31982&amp;spn=0.006295,0.006295&amp;t=h&amp;iwloc=A&amp;source=embed'>Directions</a>
 				</div>
+				<div class='marginTop'>We are located at the corner of 10th and S King, in Seattle's International District near Downtown.</div>
 
 				<h3>Gathering Times</h3>
 				<div>
@@ -36,7 +37,7 @@ get_header(); ?>
 
 				<h3>Any Questions?</h3>
 				<div>
-					If you have any questions or need a ride, please contact Pastor Matt Zwitt at:
+					If you have any questions or need to arrange a ride, please contact Pastor Matt Zwitt at:
 				</div>
 				<div class='marginTop'>Email: pastormatt@csbcseattle.org</div>
 				<div>Phone: 251-421-4157</div>

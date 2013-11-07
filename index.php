@@ -24,36 +24,73 @@ get_header(); ?>
      <?php
      getPosts('sermon', 1); while (have_posts()) : the_post(); ?>
      
-     <section id='latestMessageSection' class='clear cap'>
-       <div id='latestMessage' class='left'>
+     <section class='clear cap hidden-xs latestMessageSection'>
+       <div class='left latestMessage'>
          <div>Latest</div>
          <div>Message</div>
        </div>
-       <div id='date' class='left'>
+       <div class='left date'>
          <?php $date = get_the_date('M j'); $datePieces = explode(' ', $date); ?>
          <div><?php echo $datePieces[0]; ?></div>
          <div><?php echo $datePieces[1]; ?></div>
        </div>
-       <div id='sermonTitle' class='left'>
+       <div class='left sermonTitle'>
          <div><?php the_title(); ?></div>
          <div>Pastor Matt Zwitt</div>
        </div>
        <div class='right button'>
-         <a href='<?php the_permalink() ?>'>Watch</a>
+         <a href='<?php the_permalink() ?>'>Watch / Listen</a>
        </div>
-       <div class='right button'>
-         <a href='<?php the_permalink() ?>'>Listen</a>
+     </section>
+
+      <section class='clear cap visible-xs latestMessageSection'>
+       <div class='clear'>
+         <div class='left latestMessage'>
+            Latest Message:
+         </div>
+         <div class='right date'>
+           <?php
+             $date = get_the_date('M j');
+             $datePieces = explode(' ', $date);
+             echo $datePieces[0],' ', $datePieces[1];
+           ?>
+         </div>
+       </div>
+
+       <div class='sermonTitle'>
+         <div><?php the_title(); ?></div>
+         <div>Pastor Matt Zwitt</div>
+       </div>
+
+       <div>
+          <span class='button'>
+           <a href='<?php the_permalink() ?>'>Watch / Listen</a>
+         </span>
        </div>
      </section>
 
      <?php endwhile; ?>
      
-     <section class='boxHolder'>
-        <div class='clear'>
-          <div id='resourcesBox'><a href='<?php echo getRootURL(); ?>/resources'>Resources</a></div>
-          <div id='eventsBox'><a href='<?php echo getRootURL(); ?>/events'>News & Events</a></div>
-          <div id='locationBox'><a href='<?php echo getRootURL(); ?>/location'>Location</a></div>
-          <div id='contactBox'><a href='<?php echo getRootURL(); ?>/connect'>Contact</a></div>
+     <section class='boxes row'>
+        <div class='col-sm-6 col-md-3 col-lg-3'>
+          <div id='resourcesBox'>
+            <a href='<?php echo getRootURL(); ?>/resources'>Resources</a>
+          </div>
+        </div>
+        <div class='col-sm-6 col-md-3 col-lg-3'>
+          <div id='eventsBox'>
+            <a href='<?php echo getRootURL(); ?>/events'>News & Events</a>
+          </div>
+        </div>
+        <div class='col-sm-6 col-md-3 col-lg-3'>
+          <div id='locationBox'>
+            <a href='<?php echo getRootURL(); ?>/visit'>Visit</a>
+          </div>
+        </div>
+        <div class='col-sm-6 col-md-3 col-lg-3'>
+          <div id='contactBox'>
+            <a href='<?php echo getRootURL(); ?>/connect'>Contact</a>
+          </div>
         </div>
       </section>
 

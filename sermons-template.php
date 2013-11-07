@@ -18,28 +18,15 @@ get_header(); ?>
 					<?php
 					getPosts('sermon', -1);
 
-					while (have_posts()) : the_post(); ?>
-
-						<div>
-						  	<img src="<?php echo getFeaturedPostUrl(get_the_ID()); ?>"/>
-						  	<a href='<?php the_permalink() ?>'></a>
-						  	<div>
-								<div class='cover'></div>
-
-								<div class='title caps'>
-									<?php the_title(); ?>
-								</div>
-								<div class='date'>
-									<?php if(get_the_title() !== 'Stand-Alone Sermons') {
-										the_time('F Y');
-									} ?>
-								</div>
-							</div>
-						</div>
-
-					<?php endwhile; ?>
+					while (have_posts()) : the_post(); 
+						echo getPostBox();
+					endwhile; ?>
 
 				</div>
+			</section>
+
+			<section class='backContainer faint'>
+				<a class='right' href='<?php echo getRootURL(); ?>/resources'>Back to Resources</a>
 			</section>
 
 		</div><!-- #content -->

@@ -116,6 +116,8 @@ get_header(); ?>
 						</div>
 
 					<?php else : ?>
+						<?php get_template_part( 'content', get_post_format() ); ?>
+
 						<nav class="nav-single">
 							<h3 class="assistive-text"><?php _e( 'Post navigation', 'twentytwelve' ); ?></h3>
 							<div><?php previous_post_link( '%link', 'Previous post: %title' ); ?></div>

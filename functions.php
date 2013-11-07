@@ -517,14 +517,24 @@ function getRootURL() {
 	return get_option("siteurl");
 }
 
-function getPostBox($postId='', $timeFormat='F j, Y') {
+function getPostBox($postId='', $timeFormat='F j, Y', $options=array()) {
 	if(!strlen($postId)) {
 		$postId = get_the_ID();
 	}
-	$img = getFeaturedPostUrl($postId);
-	$url = get_permalink($postId);
+	$img = isset($options['img']) ? $options['img'] : getFeaturedPostUrl($postId);
+	$url = isset($options['url']) ? $options['url'] : get_permalink($postId);
 	$title = get_the_title($postId);
 	$time = get_the_time($timeFormat, $postId);
 
-	return "<div><img src='$img'/><a href='$url'></a><div><div class='cover'></div><div class='title'>$title</div><div class='date'>$time</div></div></div>";
+	$new_page = '';
+
+	if(isset($options['new_page'])) {
+		$new_page = 'target="_blank"';
+	}
+
+	return "<div><img src='$img'/><a $new_page href='$url'></a><div><div class='cover'></div><div class='title'>$title</div><div class='date'>$time</div></div></div>";
+}
+function get_url_prefix() {
+	$is_devo = true;
+	return $is_devo ? 'wordpress' : 'english';
 }
