@@ -2284,7 +2284,7 @@ body {
   max-width: 1110px;
   margin: 0 auto;
   background-color: white;
-  padding: 0px 75px 70px;
+  padding: 0px 75px 25px;
   border-right: 1px solid #CCC;
   border-left: 1px solid #CCC;
 }
@@ -2293,6 +2293,7 @@ header {
   margin: -5px 0px 23px;
   border-bottom: 5px solid #CCC;
   text-transform: uppercase;
+  position: relative;
   #logoDiv {
   	background: url("img/logo.png");
   	background-size: 100% 100px;
@@ -2303,6 +2304,12 @@ header {
   		display: block;
   		.fullDimensions();
   	}
+  }
+  #menuContainer {
+    position: absolute;
+    top: 45px;
+    right: 5px;
+    cursor: pointer;
   }
   #links {
     list-style: none;
@@ -2881,6 +2888,9 @@ iframe {
 .marginTop {
 	margin-top: 10px;
 }
+.someMarginTop {
+  margin-top: 10px;
+}
 .moreMarginTop {
 	margin-top: 25px;
 }
@@ -2894,4 +2904,43 @@ iframe {
 			padding: 20px;
 		}
 	}
+}
+#gatheringTimes {
+  border-bottom: 2px solid #CCC;
+  padding-bottom: 15px;
+  margin-bottom: -5px;  
+}
+.bold {
+  font-weight: bold;
+  text-decoration: underline;
+}
+#footer {
+  border-top: 1px solid #CCC;
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 20px 75px 20px;
+  color: #999;
+  line-height: 1.3em;
+}
+.hidden {
+  display: none;
+}
+#mobileMenu {
+  border-top: 5px solid #CCC;
+  li {
+    display: block;
+    list-style-type: none;
+    border-bottom: 1px solid #CCC;
+
+    a {
+      display: block;
+      text-decoration: none;
+      padding: 12px 0px;
+      color: #333;
+    }
+
+    &:last-child {
+      border-bottom: 0px;
+    }
+  }
 }

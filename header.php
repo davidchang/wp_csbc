@@ -36,9 +36,34 @@
 <body <?php body_class(); ?>>
 <div id='mainContainer'>
   <header class='clear'>
-    <div id='logoDiv' class='left'><a href='<?php echo $siteurl; ?>/'></a></div>
-    
-    <ul id='links' class='right'>
+    <div class='clear'>
+      <div id='logoDiv' class='left'><a href='<?php echo $siteurl; ?>/'></a></div>
+      
+      <ul id='links' class='right hidden-xs'>
+        <li>
+          <a href='<?php echo $siteurl; ?>/about-us'>About</a>
+        </li>
+        <li>
+          <a href='<?php echo $siteurl; ?>/visit'>Visit</a>
+        </li>
+        <li>
+          <a href='<?php echo $siteurl; ?>/resources'>Resources</a> 
+        </li>
+        <li>
+          <a href='<?php echo $siteurl; ?>/connect'>Connect</a>
+        </li>
+        <li>
+          <a href='<?php echo $siteurl; ?>/events'>Events</a>
+        </li>
+      </ul>
+
+      <div id='menuContainer' class='visible-xs'>
+        <img src="http://f.cl.ly/items/1U2c3b1215383h3a2T2r/icon-menu.svg"/>
+        <span>Menu</span>
+      </div>
+    </div>
+
+    <div id='mobileMenu' class='hidden'>
       <li>
         <a href='<?php echo $siteurl; ?>/about-us'>About</a>
       </li>
@@ -54,7 +79,7 @@
       <li>
         <a href='<?php echo $siteurl; ?>/events'>Events</a>
       </li>
-    </ul>
+    </div>
   </header>
 
   <div id="main" class="wrapper">
