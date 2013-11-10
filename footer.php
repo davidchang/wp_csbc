@@ -48,7 +48,7 @@ function addEvent(element, evnt, funct){
    return element.addEventListener(evnt, funct, false);
 }
 
-// example
+// for a responsive header
 addEvent(
     document.getElementById('menuContainer'),
     'click',

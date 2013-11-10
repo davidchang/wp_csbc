@@ -29,90 +29,90 @@ get_header(); ?>
 
 					<?php elseif(in_category($categories['sermon series'], get_the_ID())) : ?>
 
-						<section class='boxHolder'>
-							<h1 class='big caps'><?php the_title() ?></h1>
-							<div class='clear'>
-								<?php $custom_fields = get_post_custom(); if(!empty($custom_fields['sermon_ids'])) {
-									foreach(explode(',', $custom_fields['sermon_ids'][0]) as $cur) {
-										echo getPostBox($cur);
-									}
-								}
-								?>
-							</div>
-						</section>
+						<?php
+							$postIds = array();
 
-						<div class='backContainer'>
-							<a href='<?php echo getRootURL(); ?>/sermons'>Back to Sermons</a>
-						</div>
-						
+							$custom_fields = get_post_custom();
+							if(!empty($custom_fields['sermon_ids'])) {
+								foreach(explode(',', $custom_fields['sermon_ids'][0]) as $cur) {
+									$postIds[] = $cur;
+								}
+							}
+
+							echo getPostBoxSection(
+								array(
+									'title' => get_the_title(),
+									'url' => 'sermons',
+									'moreText' => 'Back to Sermons',
+									'moreClasses' => 'backContainer',
+									'postIds' => $postIds
+								));
+						?>
+
 					<?php elseif(in_category($categories['sermon'], get_the_ID())) : ?>
 						<!-- sunday sermon content -->
 						<?php get_template_part( 'content', get_post_format() ); ?>
 
+						<!-- show more sermons, based on whether the sermon is part of a series or not -->
 						<div class='moreContainer'>
-							<section class='boxHolder'>
-								<?php
-									$series_id = get_post_custom()['series_id'][0];
-									$use_the_series = get_the_title($series_id) !== 'Stand-Alone Sermons';
-								?>
-								<h1 class='big caps'><?php if($use_the_series) {
-									echo "More From This Series";
-								} else {
-									echo "Most Recent Sermons";
-								} ?></h1>
-								<div class='clear'>
 
-									<?php
+							<?php
+								$series_id = get_post_custom()['series_id'][0];
+								$use_the_series = get_the_title($series_id) !== 'Stand-Alone Sermons';
 
-									if($use_the_series) {
+								if ($use_the_series) {
 
-										//get the custom fields for the series
-										$custom_fields = get_post_custom($series_id);
-										if(!empty($custom_fields['sermon_ids'])) {
-											$sermon_ids = $custom_fields['sermon_ids'][0];
-											//reverse sort so that most recent shows up
+									//get the custom fields for the series
+									$custom_fields = get_post_custom($series_id);
+									$postIds = array();
+									if(!empty($custom_fields['sermon_ids'])) {
+										$sermon_ids = $custom_fields['sermon_ids'][0];
+										//reverse sort so that most recent shows up
 
-											$reverse_ids = array_reverse(explode(',', $sermon_ids));
-											$counter = 0;
+										$reverse_ids = array_reverse(explode(',', $sermon_ids));
 
-											foreach($reverse_ids as $cur) {
-												if($cur == get_the_ID())
-													continue;
-
-												$counter++;
-												if($counter > 4)
-													break;
-
-												echo getPostBox($cur);
-											}
-										}
-									}
-									else {
-										//you'll want to show the most recent 4 sermons regardless
-
-										$sermons = getPosts('sermon', 5, true);
-										$counter = 0;
-										foreach($sermons as $cur) {
-											if($cur->ID == get_the_ID())
+										foreach($reverse_ids as $cur) {
+											if($cur == get_the_ID())
 												continue;
-											$counter++;
-											if($counter > 4)
+
+											if(count($postIds) > 4)
 												break;
 
-											echo getPostBox($cur->ID);
+											$postIds[] = $cur;
 										}
 									}
-									?>
-								</div>
-							</section>
-						</div>
 
-						<div class='backContainer'>
-							<?php if($use_the_series) { ?>
-								<a href='<?php echo get_permalink($series_id); ?>'>Back to Sermon Series</a>
-							<?php } else { ?>
-								<a href='<?php echo getRootURL(); ?>/sermons'>Back to Sermons</a>
-							<?php } ?>
+									$args = array(
+										'title' => 'More from This Series',
+										'url' => get_permalink($series_id),
+										'isPermalink' => true,
+										'moreText' => 'Back to Sermon Series',
+										'postIds' => $postIds
+									);
+								} else {
+
+									$postIds = array();
+									$sermons = getPosts('sermon', 5, true);
+									foreach($sermons as $cur) {
+										if($cur->ID == get_the_ID())
+											continue;
+
+										if(count($postIds) > 4)
+											break;
+
+										$postIds[] = $cur->ID;
+									}
+
+									$args = array(
+										'title' => 'Most Recent Sermons',
+										'url' => 'sermons',
+										'moreText' => 'Back to Sermons',
+										'postIds' => $postIds
+									);
+								}
+
+								echo getPostBoxSection($args);
+							?>
 						</div>
 
 					<?php else : ?>

@@ -541,27 +541,35 @@ function get_url_prefix() {
 
 function getPostBoxSection($options = array()) {
 	$category = $options['category'];
-	getPosts($category, isset($options['num']) ? $options['num'] : 4);
+
 	$postBoxesHTML = '';
-	while (have_posts()) : the_post();
-		if ($category !== 'video testimonies')
-			$postBoxesHTML .= getPostBox(null, 'F, Y');
-		else
-			$postBoxesHTML .= getPostBox('', 'F j, Y', array(
-				'url' => 'http://www.youtube.com/watch?v='.$custom_fields['youtube'][0],
-				'new_page' => true
-			));
-	endwhile;
+	if (empty($options['postIds'])) {
+		getPosts($category, isset($options['num']) ? $options['num'] : 4);
+		while (have_posts()) : the_post();
+			if ($category !== 'video testimonies') {
+				$postBoxesHTML .= getPostBox('', 'F, Y');
+			} else {
+				$postBoxesHTML .= getPostBox('', 'F j, Y', array(
+					'url' => 'http://www.youtube.com/watch?v='.$custom_fields['youtube'][0],
+					'new_page' => true
+				));
+			}
+		endwhile;
+	} else {
+		foreach($options['postIds'] as $id) {
+			$postBoxesHTML .= getPostBox($id);
+		}
+	}
 
 	$title = $options['title'];
-	$url = $options['url'];
+	$url = empty($options['isPermalink']) ? getRootURL().'/'.$options['url'] : $options['url'];
 	$moreText = isset($options['moreText']) ? $options['moreText'] : 'More '.$title;
 
 	$moreHTML = '';
 	$moreHTMLClasses = isset($options['moreClasses']) ? $options['moreClasses'] : 'moreMarginTop';
 	if (empty($options['dontShowMore'])) {
 		$moreHTML = "<div class='$moreHTMLClasses'>".
-			"<a class='right customBtn' href='<?php echo getRootURL(); ?>/$url'>$moreText</a>".
+			"<a class='right customBtn' href='$url'>$moreText</a>".
 		"</div>";
 	}
 

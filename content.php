@@ -17,19 +17,19 @@
 		<?php endif; ?>
 
 		<?php if(in_category($categories['friday night topics'], get_the_ID())) : ?>
-			<section class='post mediaBox clear'>
-				<div class='media'>
+			<section class='row mediaBox post'>
+				<div class='col-sm-7 media'>
 					<img src="<?php echo getFeaturedPostUrl(get_the_ID()); ?>"/>
 				</div>
-				<div class='description'>
+				<div class='col-sm-5 description'>
 					<!-- print out the blog post content -->
 					<?php the_content(); ?>
 				</div>
 			</section>
 		<?php elseif(in_category($categories['sermon'], get_the_ID())) : ?>
-			<!-- TODO -->
-			<section class='mediaBox clear'>
-				<div class='media'>
+
+			<section class='row mediaBox post'>
+				<div class='col-sm-7 media'>
 					<?php $custom_fields = get_post_custom(); if($custom_fields['youtube']) { ?>
 						<div class='youtubeWrapper'>
 							<iframe src="//www.youtube.com/embed/<?php echo $custom_fields['youtube'][0]; ?>" frameborder="0" allowfullscreen></iframe>
@@ -40,11 +40,12 @@
 						</div>
 					<?php } ?>
 				</div>
-				<div class='description'>
+				<div class='col-sm-5 description'>
 					<!-- print out the blog post content -->
 					<?php the_content(); ?>
 				</div>
 			</section>
+
 		<?php else : ?>
 			<div class="csbc-custom entry-header">
 				<?php the_post_thumbnail(); ?>
