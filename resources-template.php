@@ -12,45 +12,21 @@ get_header(); ?>
 	<div id="primary" class="site-content resourcesTemplate">
 		<div id="content" role="main" class='pageSection clear'>
 
-			<section class='clear'>
-				<div>
-					<h1 class='big caps'>Sermons</h1>
-				</div>
+			<?php echo getPostBoxSection(
+				array(
+					'title' => 'Sermons',
+					'category' => 'sermon',
+					'url' => 'sermons'
+				));
+			?>
 
-				<div class='boxes row'>
-					<?php
-					//getPosts('sermon series', 4);
-					getPosts('sermon', 4);
-
-					while (have_posts()) : the_post();
-						echo getPostBox();
-					endwhile; ?>
-				</div>
-
-				<div class='right moreMarginTop'>
-					<a class='customBtn' href='<?php echo getRootURL(); ?>/sermons'>More Sermons</a>
-				</div>
-			</section>
-
-			<section class='clear'>
-				<div>
-					<h1 class='big caps'>Friday Night Topics</h1>
-				</div>
-
-				<div class='boxes row'>
-					<?php
-					//getPosts('sermon series', 4);
-					getPosts('friday night topics', 4);
-
-					while (have_posts()) : the_post();
-						echo getPostBox(null, 'F, Y');
-					endwhile; ?>
-				</div>
-
-				<div class='right moreMarginTop'>
-					<a class='customBtn' href='<?php echo getRootURL(); ?>/friday-night-topics'>More Friday Night Topics</a>
-				</div>
-			</section>
+			<?php echo getPostBoxSection(
+				array(
+					'title' => 'Friday Night Topics',
+					'category' => 'friday night topics',
+					'url' => 'friday-night-topics'
+				));
+			?>
 
 			<?php if (isset($_GET['blog']) && $_GET['blog']) { ?>
 				<section class='clear'>

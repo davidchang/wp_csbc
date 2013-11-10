@@ -539,6 +539,38 @@ function get_url_prefix() {
 	return $is_devo ? 'wordpress' : 'english';
 }
 
-function getPostBoxSection($title, $category, $url) {
-	
+function getPostBoxSection($options = array()) {
+	$category = $options['category'];
+	getPosts($category, isset($options['num']) ? $options['num'] : 4);
+	$postBoxesHTML = '';
+	while (have_posts()) : the_post();
+		if ($category !== 'video testimonies')
+			$postBoxesHTML .= getPostBox(null, 'F, Y');
+		else
+			$postBoxesHTML .= getPostBox('', 'F j, Y', array(
+				'url' => 'http://www.youtube.com/watch?v='.$custom_fields['youtube'][0],
+				'new_page' => true
+			));
+	endwhile;
+
+	$title = $options['title'];
+	$url = $options['url'];
+	$moreText = isset($options['moreText']) ? $options['moreText'] : 'More '.$title;
+
+	$moreHTML = '';
+	$moreHTMLClasses = isset($options['moreClasses']) ? $options['moreClasses'] : 'moreMarginTop';
+	if (empty($options['dontShowMore'])) {
+		$moreHTML = "<div class='$moreHTMLClasses'>".
+			"<a class='right customBtn' href='<?php echo getRootURL(); ?>/$url'>$moreText</a>".
+		"</div>";
+	}
+
+	return
+	"<section class='clear'>".
+		"<div>".
+			"<h1 class='big caps'>$title</h1>".
+		"</div>".
+		"<div class='boxes row'>$postBoxesHTML</div>".
+		$moreHTML.
+	"</section>";
 }

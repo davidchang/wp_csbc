@@ -2437,10 +2437,6 @@ header {
   padding-bottom: 20px;
 }
 
-.oneHalf {
-	width: 48%;
-}
-
 .boxes.row {
 	> div {
 		padding: 10px 5px;
@@ -2521,14 +2517,6 @@ header {
 	}
 }
 
-@media (max-width: @screen-sm-min) {
-	.boxes.row > div {
-		padding-left: 15px;
-		padding-right: 15px;
-	}
-}
-
-
 .boxHolder {
 	& > .clear > div {
 		.left;
@@ -2585,33 +2573,26 @@ header {
 }
 
 .mediaBox {
-	padding: 20px;
+  margin: 10px 0px;
+  padding: 20px 0px;
 	background-color: #999;
 	.rounded(5px);
-	clear: both;
 	.media {
-		width: 60%;
 		height: 328px;
-		margin-right: 20px;
-		float: left;
 		img {
 			.fullDimensions();
 		}
 	}
 	.description {
-		width: 37%;
 		color: #EEE;
 		font-size: 1.3em;
 		line-height: 1.3em;
-		margin-top: 8px;
-		float: right;
 
 		header {
 			text-transform: none;
 			text-align: right;
 			margin: 0px 0px 25px;
 			border-bottom: 0px solid #CCC;
-
 		}
 	}
 }
@@ -2658,9 +2639,6 @@ iframe {
 	}
 }
 @media (max-width: 700px) {
-	.oneHalf {
-		width: 100%;
-	}
 	.boxHolder > .clear > div {
 			width: 100%;
 			margin: 5px 0px;
@@ -2727,13 +2705,6 @@ iframe {
 	.aboutTemplate {
 		#aboutSermonHolder, #aboutUsDescription {
 			width: 100%;
-		}
-	}
-}
-@media (max-width: 700px) {
-	.aboutTemplate {
-		.oneHalf {
-			margin-bottom: 35px;
 		}
 	}
 }
@@ -2909,6 +2880,14 @@ iframe {
   border-bottom: 2px solid #CCC;
   padding-bottom: 15px;
   margin-bottom: -5px;  
+
+  > div {
+    margin-bottom: 5px;
+
+    &:first-child {
+      margin-top: 5px;
+    }
+  }
 }
 .bold {
   font-weight: bold;
@@ -2942,5 +2921,26 @@ iframe {
     &:last-child {
       border-bottom: 0px;
     }
+  }
+}
+
+@media (max-width: @screen-sm-min) {
+  .boxes.row > div {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .mediaBox {
+    .description {
+      margin-top: 15px;
+    }
+  }
+  .row > div:last-child {
+    margin-top: 15px;
+  }
+
+  #footer {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
