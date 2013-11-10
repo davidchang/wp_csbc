@@ -24,11 +24,11 @@ get_header(); ?>
 			</section>
 
 			<div class='groupAnchor' id='girlsGroup'></div>
-			<section class='mediaBox clear'>
-				<div class='media'>
+			<section class='row mediaBox post'>
+				<div class='col-sm-7 media'>
 					<img src="/english/wp-content/uploads/2013/10/GirlsGroup_600x326.jpg"/>
 				</div>
-				<div class='description'>
+				<div class='col-sm-5 description'>
 					<header>
 						<div>Girls Group</div>
 						<div>When: Every Other Wednesday</div>
@@ -46,11 +46,11 @@ get_header(); ?>
 			</section>
 
 			<div class='groupAnchor' id='guysGroup'></div>
-			<section class='mediaBox clear'>
-				<div class='media'>
+			<section class='row mediaBox post'>
+				<div class='col-sm-7 media'>
 					<img src="/english/wp-content/uploads/2013/10/GuysGroup_600x326.jpg"/>
 				</div>
-				<div class='description'>
+				<div class='col-sm-5 description'>
 					<header>
 						<div>Guys Group</div>
 						<div>When: Every Other Wednesday</div>
@@ -66,13 +66,14 @@ get_header(); ?>
 					</section>
 				</div>
 			</section>
+			
 
 			<div class='groupAnchor' id='prayerGroup'></div>
-			<section class='mediaBox clear'>
-				<div class='media'>
+			<section class='row mediaBox post'>
+				<div class='col-sm-7 media'>
 					<img src="/english/wp-content/uploads/2013/10/PrayerGroup_600x326.jpg"/>
 				</div>
-				<div class='description'>
+				<div class='col-sm-5 description'>
 					<header>
 						<div>Prayer Group</div>
 						<div>When: Every Other Monday</div>
@@ -89,12 +90,13 @@ get_header(); ?>
 				</div>
 			</section>
 
+
 			<div class='groupAnchor' id='marriageGroup'></div>
-			<section class='mediaBox clear'>
-				<div class='media'>
+			<section class='row mediaBox post'>
+				<div class='col-sm-7 media'>
 					<img src="/english/wp-content/uploads/2013/10/MarriageGroup_600x326.jpg"/>
 				</div>
-				<div class='description'>
+				<div class='col-sm-5 description'>
 					<header>
 						<div>Marriage Group</div>
 						<div>When: Every Other Monday</div>
@@ -111,12 +113,13 @@ get_header(); ?>
 				</div>
 			</section>
 
+
 			<div class='groupAnchor' id='exeJesus'></div>
-			<section class='mediaBox clear'>
-				<div class='media'>
+			<section class='row mediaBox post'>
+				<div class='col-sm-7 media'>
 					<img src="/english/wp-content/uploads/2013/10/Exejesus_600x326.jpg"/>
 				</div>
-				<div class='description'>
+				<div class='col-sm-5 description'>
 					<header>
 						<div>exeJesus</div>
 						<div>When: Monthly on Thursdays</div>
@@ -140,14 +143,16 @@ get_header(); ?>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 	<script>
 		function sticky_relocate() {
+		$connectNav = $('#connectNav');
+		$stickyAnchor = $('#stickyAnchor');
 		  var window_top = $(window).scrollTop();
-		  var div_top = $('#stickyAnchor').offset().top - 28;
+		  var div_top = $stickyAnchor.offset().top - 28;
 		  if (window_top > div_top) {
-		    $('#connectNav').addClass('stick').css('width', $('#content').width());
-		    $('#stickyAnchor').css('height', $('#connectNav').height() + 20);
+		    $connectNav.addClass('stick').css('width', $('#content').width());
+		    $stickyAnchor.css('height', $connectNav.height() + 20);
 		  } else {
-		    $('#connectNav').removeClass('stick');
-		    $('#stickyAnchor').css('height', 0);
+		  	$connectNav.removeClass('stick');
+		    $stickyAnchor.css('height', 0);
 		  }
 		}
 
