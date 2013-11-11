@@ -16,7 +16,7 @@
 		</div>
 		<?php endif; ?>
 
-		<?php if(in_category($categories['friday night topics'], get_the_ID())) : ?>
+		<?php if(in_category($categories['friday night topics'], get_the_ID()) || in_category($categories['events'], get_the_ID())) : ?>
 			<section class='row mediaBox post'>
 				<div class='col-sm-7 media'>
 					<img src="<?php echo getFeaturedPostUrl(get_the_ID()); ?>"/>

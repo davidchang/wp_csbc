@@ -477,6 +477,8 @@ function getPosts($type,$number=5,$noLoop = false) {
 		$cat = '7,8';
 	else if($type == 'video testimonies')
 		$cat = $is_devo ? 23 : 36;
+	else if($type == 'events')
+		$cat = $is_devo ? 2 : 37;
 
 	$queryString = '';
 
@@ -504,7 +506,8 @@ function getCategories() {
 	return array(
 		'sermon series' => $is_devo ? 21 : 22,
 		'friday night topics' => $is_devo ? 19 : 20,
-		'sermon' => $is_devo ? 11 : 24
+		'sermon' => $is_devo ? 11 : 24,
+		'events' => $is_devo ? 2 : 37
 	);
 }
 
@@ -525,6 +528,9 @@ function getPostBox($postId='', $timeFormat='F j, Y', $options=array()) {
 	$url = isset($options['url']) ? $options['url'] : get_permalink($postId);
 	$title = get_the_title($postId);
 	$time = get_the_time($timeFormat, $postId);
+	if (!empty($options['custom-date'])) {
+		 $time = get_post_meta($postId, 'date', true);
+	}
 
 	$new_page = '';
 
@@ -546,7 +552,7 @@ function getPostBoxSection($options = array()) {
 	if (empty($options['postIds'])) {
 		getPosts($category, isset($options['num']) ? $options['num'] : 4);
 		while (have_posts()) : the_post();
-			if ($category !== 'video testimonies') {
+			if (!in_array($category, array('video testimonies', 'events'))) {
 				$postBoxesHTML .= getPostBox('', 'F, Y');
 			} else {
 				$postBoxesHTML .= getPostBox('', 'F j, Y', array(
@@ -557,7 +563,13 @@ function getPostBoxSection($options = array()) {
 		endwhile;
 	} else {
 		foreach($options['postIds'] as $id) {
-			$postBoxesHTML .= getPostBox($id);
+			if (!in_array($category, array('video testimonies', 'events'))) {
+				$postBoxesHTML .= getPostBox($id);
+			} else {
+				$postBoxesHTML .= getPostBox($id, null, array(
+					'custom-date' => true
+				));
+			}
 		}
 	}
 

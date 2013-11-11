@@ -57,8 +57,11 @@ get_header(); ?>
 						<div class='moreContainer'>
 
 							<?php
-								$series_id = get_post_custom()['series_id'][0];
-								$use_the_series = get_the_title($series_id) !== 'Stand-Alone Sermons';
+								if (isset(get_post_custom()['series_id'])) {
+
+									$series_id = get_post_custom()['series_id'][0];
+									$use_the_series = get_the_title($series_id) !== 'Stand-Alone Sermons';
+								}
 
 								if ($use_the_series) {
 
@@ -75,7 +78,7 @@ get_header(); ?>
 											if($cur == get_the_ID())
 												continue;
 
-											if(count($postIds) > 4)
+											if(count($postIds) >= 4)
 												break;
 
 											$postIds[] = $cur;
@@ -97,7 +100,7 @@ get_header(); ?>
 										if($cur->ID == get_the_ID())
 											continue;
 
-										if(count($postIds) > 4)
+										if(count($postIds) >= 4)
 											break;
 
 										$postIds[] = $cur->ID;
